@@ -675,6 +675,148 @@
                 modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
             }
 
+            // Mobile Menu Logic
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeMobileMenuButton = document.getElementById('close-mobile-menu');
+
+            function openMobileMenu() {
+                mobileMenu.classList.remove('-translate-x-full');
+            }
+
+            function closeMobileMenu() {
+                mobileMenu.classList.add('-translate-x-full');
+            }
+
+            if (mobileMenuButton) {
+                mobileMenuButton.addEventListener('click', openMobileMenu);
+            }
+            if (closeMobileMenuButton) {
+                closeMobileMenuButton.addEventListener('click', closeMobileMenu);
+            }
+            // Close mobile menu when a navigation link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+
+
+            // Policy Modal Logic
+            const policyModal = document.getElementById('policy-modal');
+            const closePolicyModalButton = document.getElementById('close-policy-modal');
+            const policyModalTitle = document.getElementById('policy-modal-title');
+            const policyModalContent = document.getElementById('policy-modal-content');
+            const policyLinks = document.querySelectorAll('a[data-policy]');
+
+            const policies = {
+                terms: {
+                    title: "Terms & Conditions",
+                    content: `
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Welcome to INDOTRAVO.COM</h3>
+                        <p class="mb-4">We welcome the visitors to our website “INDOTRAVO.COM”. This website was developed with the purpose of making available to you to find out and browse the information, services and brands owned by INDOTRAVO your travel partner.</p>
+                        <p class="mb-4">If you continue to browse and use this website you are agreeing to comply with the following terms and condition of our website.</p>
+                        
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Usage of Information</h3>
+                        <p class="mb-4">There is no agreement between us and the visitors to our website under which we provide any guarantee or warranty of any kind for the accuracy, timeliness, performance, completeness or suitability of the information, brand or services found or offered on this website for any particular purpose. We are not under any liability under the law if the site has materials which may contain inaccuracies or errors. The usage of information available on this website is entirely at your own risk and should be used for your own personal, non-commercial use only and non-compliance will be considered as an offence and leads to damage/claim.</p>
+                        <p class="mb-4">The foremost purpose of using this website is to find out and obtaining information on the products and services offered by our Company. You get access to our services and brands that are available on our website, choose products and brand, select your preference, contact with us, submit your views and comments on our Group and our products and services.</p>
+                        
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Intellectual Property</h3>
+                        <p class="mb-4">The content of this website is owned by or licensed to us including the copyrights. This website may also contain links to other websites which are only with the purpose to provide more information to you. You may not link this website to another website without the owner’s prior written consent. The breach of this condition may result into legal dispute and further lead to claims and damages based on the extent of the offence.</p>
+                        
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Pricing and Conditions</h3>
+                        <p class="mb-4">Prices displayed for the products and services on INDOTRAVO.COM are subject to change without prior information or notice. The price are valid for minimum 02 adults travelling together.</p>
+                        <p class="mb-4">In the case of bad weather conditions, we try our best to find similar activities/transfers.</p>
+                        <p class="mb-4">Any cost or cancellation charge because of any unforeseen conditions is not included.</p>
+                        <p class="mb-4">Travelers are requested to take care of their belongings.</p>
+                        <p class="mb-4">Note that the paid amount is only refundable according to the cancellation policy as mentioned below.</p>
+                    `
+                },
+                privacy: {
+                    title: "Privacy Policy",
+                    content: `
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Information Collection and Use</h3>
+                        <p class="mb-4">When you purchase something from our website, as part of the buying process, we collect the personal information you give us such as your name, address and email address. With your permission, we may send you emails about our store, new products and other updates.</p>
+                        <p class="mb-4">We may disclose your personal information if we are required by law to do so or if you violate our Terms of Service.</p>
+                        
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Data Security</h3>
+                        <p class="mb-4">To protect your personal information, we take reasonable precautions and follow industry best practices to make sure it is not inappropriately lost, misused, accessed, disclosed, altered or destroyed.</p>
+                        
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Third-Party Links</h3>
+                        <p class="mb-4">When you click on links on our store, they may direct you away from our site. We are not responsible for the privacy practices of other sites and encourage you to read their privacy statements.</p>
+                        
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Policy Changes</h3>
+                        <p class="mb-4">We reserve the right to modify this privacy policy at any time, so please review it frequently. Changes and clarifications will take effect immediately upon their posting on the website. If we make material changes to this policy, we will notify you here that it has been updated, so that you are aware of what information we collect, how we use it, and under what circumstances, if any, we use and/or disclose it. If our store is acquired or merged with another company, your information may be transferred to the new owners so that we may continue to sell products to you.</p>
+                        
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Contact Us</h3>
+                        <p class="mb-4">If you would like to: access, correct, amend or delete any personal information we have about you, simply contact us at <strong>info@indotravo.com</strong></p>
+                    `
+                },
+                cancellation: {
+                    title: "Cancellation Policy",
+                    content: `
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Cancellation Terms</h3>
+                        <ul class="list-disc pl-5 space-y-2 mb-4">
+                            <li>Cancellation process will be taken into consideration if the cancellation request is made within 72 hours of placing an order.</li>
+                            <li>There is no cancellation of orders which is commencing on the same day of placing an order.</li>
+                            <li>Cancellation of orders will not be considered for those which have been booked under the category of limited special offers.</li>
+                            <li>You can always bring it to our notice within 24 hours of receiving the product that if you feel the offer received is not the same as shown on the site or as per your expectations. Our Customer Service Team will immediately look into the complaint and will take appropriate action.</li>
+                            <li>Some bookings may be non-refundable as per the specific airline’s policy.</li>
+                            <li>Please note that convenience fee charged at the time of booking is non-refundable.</li>
+                        </ul>
+                    `
+                },
+                refund: {
+                    title: "Refund Policy",
+                    content: `
+                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Refund Facility</h3>
+                        <p class="mb-4">You enjoy a reliable and hassle-free refund facility with INDOTRAVO. In case, for any reason, you are not pleased with the order placed by you, you are always free to apply for a refund. To request a refund, you can contact us with your order details within three days of your purchase.</p>
+                        <p class="mb-4">Your refund request reason is optional; however you are always welcome to share your feedback as we feel that customer feedback is precious and will take very seriously and use it to constantly improve our offers and quality of services. Refunds will be processed within 21 days period.</p>
+                        
+                        <h3 class="text-xl font-bold mb-3 text-gray-800">Specific Conditions</h3>
+                        <ul class="list-disc pl-5 space-y-2 mb-4">
+                            <li>Refund for hotel payment will follow the hotel’s cancellation policy.</li>
+                            <li>Flight tickets cancellations will follow the airlines policy.</li>
+                            <li>Please note that convenience fee charged at the time of booking will not be refundable.</li>
+                        </ul>
+                        <p class="mb-4">To ensure the best experience possible, we are there with you always.</p>
+                    `
+                }
+            };
+
+            function openPolicyModal(policyType) {
+                const policy = policies[policyType];
+                if (policy) {
+                    policyModalTitle.textContent = policy.title;
+                    policyModalContent.innerHTML = policy.content;
+                    policyModal.classList.remove('pointer-events-none');
+                    policyModal.classList.add('opacity-100');
+                    policyModal.querySelector('.modal-container').classList.add('scale-100', 'opacity-100');
+                    policyModal.querySelector('.modal-container').classList.remove('scale-95', 'opacity-0');
+                }
+            }
+
+            function closePolicyModal() {
+                policyModal.querySelector('.modal-container').classList.remove('scale-100', 'opacity-100');
+                policyModal.querySelector('.modal-container').classList.add('scale-95', 'opacity-0');
+                policyModal.classList.remove('opacity-100');
+                policyModal.classList.add('pointer-events-none');
+            }
+
+            policyLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const policyType = e.target.dataset.policy;
+                    openPolicyModal(policyType);
+                });
+            });
+
+            if (closePolicyModalButton) {
+                closePolicyModalButton.addEventListener('click', closePolicyModal);
+            }
+            policyModal.addEventListener('click', (e) => {
+                if (e.target === policyModal) closePolicyModal();
+            });
+
+
             // Initial call to attach listeners for existing elements (like header contact button)
             attachContactModalListeners();
         });
