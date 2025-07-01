@@ -1,13 +1,5 @@
 [
   {
-    "name": "Essential",
-    "price": "₹499",
-    "features": [
-      "City tours",
-      "3 hotel nights"
-    ]
-  },
-  {
     "name": "Explorer",
     "price": "₹899",
     "features": [
@@ -56,6 +48,15 @@
       "Hotel stays",
       "Visit to Alps",
       "5N3D"
+    ]
+  },
+  {
+    "name": "Thailand Trip",
+    "price": "₹1,50,000",
+    "features": [
+      "Airfare",
+      "Breakfast",
+      "Phuket visit"
     ]
   }
 ]
