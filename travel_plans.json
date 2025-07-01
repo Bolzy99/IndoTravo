@@ -38,5 +38,14 @@
       "Theme Parks",
       "Kid-friendly stays"
     ]
+  },
+  {
+    "name": "Bali trip",
+    "price": "₹25000",
+    "features": [
+      "Hotel stays",
+      "Travel",
+      "Flight tickets"
+    ]
   }
 ]
