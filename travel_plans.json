@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Essential",
+    "price": "₹499",
+    "features": [
+      "City tours",
+      "3 hotel nights"
+    ]
+  },
+  {
+    "name": "Explorer",
+    "price": "₹899",
+    "features": [
+      "5 destinations",
+      "Resort stay"
+    ]
+  },
+  {
+    "name": "Luxury",
+    "price": "₹1800",
+    "features": [
+      "Private tours",
+      "Luxury suites"
+    ]
+  },
+  {
+    "name": "Adventure",
+    "price": "₹1200",
+    "features": [
+      "Hiking & Trekking",
+      "Adventure sports"
+    ]
+  },
+  {
+    "name": "Family Fun",
+    "price": "₹950",
+    "features": [
+      "Theme Parks",
+      "Kid-friendly stays"
+    ]
+  }
+]
