@@ -1,13 +1,5 @@
 [
   {
-    "name": "Explorer",
-    "price": "₹899",
-    "features": [
-      "5 destinations",
-      "Resort stay"
-    ]
-  },
-  {
     "name": "Luxury",
     "price": "₹1800",
     "features": [
@@ -57,6 +49,15 @@
       "Airfare",
       "Breakfast",
       "Phuket visit"
+    ]
+  },
+  {
+    "name": "4D/4N Goa Trip",
+    "price": "₹50,000",
+    "features": [
+      "Airfare",
+      "Hotel stay",
+      "Entry to Mayan Club"
     ]
   }
 ]
