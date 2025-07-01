@@ -152,6 +152,7 @@
         </div>
     </header>
 
+    <!-- Mobile Menu -->
     <div id="mobile-menu" class="md:hidden fixed inset-0 bg-white z-[55] flex flex-col items-center justify-center space-y-8 transform -translate-x-full transition-transform duration-300 ease-in-out">
         <button id="close-mobile-menu" class="absolute top-4 right-4 text-gray-800">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -195,6 +196,69 @@
         </section>
 
         <section id="destinations" class="py-20 lg:py-24 space-y-20">
+            <!-- Moved "Top destinations" content here -->
+            <div data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-center mb-12">Top Destinations</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <!-- Destination 1: Santorini -->
+                    <div class="relative group h-64 md:h-80 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+                        <img src="images/destination-santorini.jpg" alt="Santorini" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/e2e8f0/a0aec0?text=Santorini';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                            <h3 class="text-white text-xl font-semibold">Santorini</h3>
+                        </div>
+                    </div>
+                    <!-- Destination 2: Kyoto -->
+                    <div class="relative group h-64 md:h-80 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+                        <img src="images/destination-kyoto.jpg" alt="Kyoto" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/e2e8f0/a0aec0?text=Kyoto';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                            <h3 class="text-white text-xl font-semibold">Kyoto</h3>
+                        </div>
+                    </div>
+                    <!-- Destination 3: Peru -->
+                    <div class="relative group h-64 md:h-80 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+                        <img src="images/destination-peru.jpg" alt="Peru" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/e2e8f0/a0aec0?text=Peru';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                            <h3 class="text-white text-xl font-semibold">Peru</h3>
+                        </div>
+                    </div>
+                    <!-- Destination 4: Paris -->
+                    <div class="relative group h-64 md:h-80 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+                        <img src="images/destination-paris.jpg" alt="Paris" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/e2e8f0/a0aec0?text=Paris';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                            <h3 class="text-white text-xl font-semibold">Paris</h3>
+                        </div>
+                    </div>
+                    <!-- Destination 5: Dubai -->
+                    <div class="relative group h-64 md:h-80 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+                        <img src="images/destination-dubai.jpg" alt="Dubai" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/e2e8f0/a0aec0?text=Dubai';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                            <h3 class="text-white text-xl font-semibold">Dubai</h3>
+                        </div>
+                    </div>
+                    <!-- Destination 6: South Africa -->
+                    <div class="relative group h-64 md:h-80 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+                        <img src="images/destination-south-africa.jpg" alt="South Africa" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/e2e8f0/a0aec0?text=South+Africa';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                            <h3 class="text-white text-xl font-semibold">South Africa</h3>
+                        </div>
+                    </div>
+                    <!-- Destination 7: Bali -->
+                    <div class="relative group h-64 md:h-80 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+                        <img src="images/destination-bali.jpg" alt="Bali" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/e2e8f0/a0aec0?text=Bali';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                            <h3 class="text-white text-xl font-semibold">Bali</h3>
+                        </div>
+                    </div>
+                    <!-- Destination 8: Iceland -->
+                    <div class="relative group h-64 md:h-80 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+                        <img src="images/iceland.jpg" alt="Iceland" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/e2e8f0/a0aec0?text=Iceland';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                            <h3 class="text-white text-xl font-semibold">Iceland</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Original "Personalized trips" content -->
             <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-right">
                 <div class="text-left md:pr-12">
                     <h2 class="text-4xl font-bold tracking-tight">Personalized trips.</h2>
@@ -202,46 +266,7 @@
                 </div>
                 <div class="bg-white h-64 w-full rounded-3xl shadow-sm"><img src="images/feature-personalized.jpg" alt="Personalized trip" class="w-full h-full object-cover rounded-3xl" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e2e8f0/a0aec0?text=Custom+Trip';"></div>
             </div>
-            <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-left">
-                <div class="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 order-last md:order-first">
-                    <div class="relative w-full h-36 sm:h-48 rounded-xl overflow-hidden shadow-md group">
-                        <img src="images/destination-santorini.jpg" alt="Santorini" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null;this.src='https://placehold.co/300x200/e2e8f0/a0aec0?text=Santorini';">
-                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white text-lg sm:text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">Santorini</div>
-                    </div>
-                    <div class="relative w-full h-36 sm:h-48 rounded-xl overflow-hidden shadow-md group">
-                        <img src="images/destination-kyoto.jpg" alt="Kyoto" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null;this.src='https://placehold.co/300x200/e2e8f0/a0aec0?text=Kyoto';">
-                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white text-lg sm:text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">Kyoto</div>
-                    </div>
-                    <div class="relative w-full h-36 sm:h-48 rounded-xl overflow-hidden shadow-md group">
-                        <img src="images/destination-peru.jpg" alt="Peru" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null;this.src='https://placehold.co/300x200/e2e8f0/a0aec0?text=Peru';">
-                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white text-lg sm:text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">Peru</div>
-                    </div>
-                    <div class="relative w-full h-36 sm:h-48 rounded-xl overflow-hidden shadow-md group">
-                        <img src="images/destination-paris.jpg" alt="Paris" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null;this.src='https://placehold.co/300x200/e2e8f0/a0aec0?text=Paris';">
-                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white text-lg sm:text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">Paris</div>
-                    </div>
-                    <div class="relative w-full h-36 sm:h-48 rounded-xl overflow-hidden shadow-md group">
-                        <img src="images/destination-dubai.jpg" alt="Dubai" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null;this.src='https://placehold.co/300x200/e2e8f0/a0aec0?text=Dubai';">
-                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white text-lg sm:text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">Dubai</div>
-                    </div>
-                    <div class="relative w-full h-36 sm:h-48 rounded-xl overflow-hidden shadow-md group">
-                        <img src="images/destination-south-africa.jpg" alt="South Africa" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null;this.src='https://placehold.co/300x200/e2e8f0/a0aec0?text=South+Africa';">
-                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white text-lg sm:text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">South Africa</div>
-                    </div>
-                    <div class="relative w-full h-36 sm:h-48 rounded-xl overflow-hidden shadow-md group">
-                        <img src="images/destination-bali.jpg" alt="Bali" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null;this.src='https://placehold.co/300x200/e2e8f0/a0aec0?text=Bali';">
-                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white text-lg sm:text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">Bali</div>
-                    </div>
-                    <div class="relative w-full h-36 sm:h-48 rounded-xl overflow-hidden shadow-md group">
-                        <img src="images/destination-iceland.jpg" alt="Iceland" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" onerror="this.onerror=null;this.src='https://placehold.co/300x200/e2e8f0/a0aec0?text=Iceland';">
-                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center text-white text-lg sm:text-xl font-bold opacity-0 group-hover:opacity-100 transition-opacity duration-300">Iceland</div>
-                    </div>
-                </div>
-                <div class="text-left md:pl-12">
-                    <h2 class="text-4xl font-bold tracking-tight">Top destinations.</h2>
-                    <p class="mt-4 text-lg text-gray-600">Discover packages for Paris, Bali, Japan, Kenya safaris, and many more trending spots worldwide.</p>
-                </div>
-            </div>
+            <!-- Original "24/7 support" content -->
             <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-right">
                 <div class="text-left md:pr-12">
                     <h2 class="text-4xl font-bold tracking-tight">24/7 support.</h2>
@@ -300,6 +325,7 @@
                 <p class="mt-3 text-xl text-gray-500">Trusted by globetrotters worldwide.</p>
             </div>
             <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 review-scroll-container max-h-[600px] overflow-y-auto pr-4">
+                <!-- Review 1 -->
                 <div class="bg-white p-6 rounded-3xl shadow-sm flex flex-col" data-aos="fade-up" data-aos-delay="0">
                     <div class="flex items-center mb-4">
                         <img src="images/reviewer-jyoti.jpg" alt="Jyoti Aggarwal" class="w-12 h-12 rounded-full object-cover mr-4" onerror="this.onerror=null;this.src='https://placehold.co/50x50?text=JA';">
@@ -311,6 +337,7 @@
                     <p class="text-gray-700 font-semibold mb-2">Wonderful Experience with IndoTravel!</p>
                     <p class="text-gray-700 flex-grow">I recently booked a trip through IndoTravel, and I must say, the entire experience was seamless and delightful. From the initial planning stages to the final day of our journey, their team was incredibly responsive, organized, and attentive to every detail. The itinerary was well thought out, accommodations were top-notch, and the local experiences they curated truly made our trip special. Their guides were knowledgeable and friendly, making us feel safe and well taken care of throughout. IndoTravel went above and beyond to ensure we had an unforgettable vacation. Special thanks to Ms Shally Agarwal who was connected throughout the journey🙂 Highly recommended.</p>
                 </div>
+                <!-- Review 2 -->
                 <div class="bg-white p-6 rounded-3xl shadow-sm flex flex-col" data-aos="fade-up" data-aos-delay="100">
                     <div class="flex items-center mb-4">
                         <img src="images/reviewer-ety.jpg" alt="Ety Garg" class="w-12 h-12 rounded-full object-cover mr-4" onerror="this.onerror=null;this.src='https://placehold.co/50x50?text=EG';">
@@ -322,6 +349,7 @@
                     <p class="text-gray-700 font-semibold mb-2">I couldn’t be happier with the experience!!</p>
                     <p class="text-gray-700 flex-grow">From the moment I reached out for help with planning my vacation, Shally and team was incredibly attentive, patient and professional. They took the time to understand my preferences, budgets and travel goals and created customized itinerary. Everything from flights to accommodation was perfectly organized. I highly recommend Indo travel for anyone looking for expert travel advice and stress free booking experience.</p>
                 </div>
+                <!-- Review 3 -->
                 <div class="bg-white p-6 rounded-3xl shadow-sm flex flex-col" data-aos="fade-up" data-aos-delay="200">
                     <div class="flex items-center mb-4">
                         <img src="images/reviewer-shivank.jpg" alt="Shivank Singh" class="w-12 h-12 rounded-full object-cover mr-4" onerror="this.onerror=null;this.src='https://placehold.co/50x50?text=SS';">
@@ -333,6 +361,7 @@
                     <p class="text-gray-700 font-semibold mb-2">New year trip to Almaty was an adventure.</p>
                     <p class="text-gray-700 flex-grow">Went on new year trip to Almaty with IndoTravo, it was an adventure. Thanks to Shally for being there to assist everyone in any situation. The hotel was good, the transport was also available all the time. Thank you for the memorable trip.</p>
                 </div>
+                <!-- Review 4 -->
                 <div class="bg-white p-6 rounded-3xl shadow-sm flex flex-col" data-aos="fade-up" data-aos-delay="300">
                     <div class="flex items-center mb-4">
                         <img src="images/reviewer-galavi.jpg" alt="Galavi Sharma" class="w-12 h-12 rounded-full object-cover mr-4" onerror="this.onerror=null;this.src='https://placehold.co/50x50?text=GS';">
@@ -344,6 +373,7 @@
                     <p class="text-gray-700 font-semibold mb-2">Couldn't be happier!</p>
                     <p class="text-gray-700 flex-grow">My second trip to Thailand and I decided to trust Indotravo for my bookings— couldn't be happier! It was a 2-week-long trip covering multiple cities and they took care of EVERYTHING. Ease of communication is priority for me and they aced that. You can trust them with your travel plans for sure, take my recommendation! 💯</p>
                 </div>
+                <!-- Review 5 -->
                 <div class="bg-white p-6 rounded-3xl shadow-sm flex flex-col" data-aos="fade-up" data-aos-delay="400">
                     <div class="flex items-center mb-4">
                         <img src="images/reviewer-shrida.jpg" alt="Shrida Shah" class="w-12 h-12 rounded-full object-cover mr-4" onerror="this.onerror=null;this.src='https://placehold.co/50x50?text=SS';">
@@ -358,7 +388,7 @@
             </div>
             <div class="mt-12 text-center" data-aos="fade-up" data-aos-delay="500">
                 <a href="https://g.page/IndoTravo/review?rc" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-gray-900 text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-700 transition-all duration-300 shadow-lg">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.868 2.884c.48.067.86.447.927.927l.15 1.054a.75.75 0 001.214.475l.93-.93a.75.75 0 011.06 0l1.414 1.414a.75.75 0 010 1.06l-.93.93a.75.75 0 00.475 1.214l1.054.15c.48.067.86.447.927.927l.15 1.054a.75.75 0 00.475 1.214l.93-.93a.75.75 0 011.06 0l1.414 1.414a.75.75 0 010 1.06l-.93.93a.75.75 0 00.475 1.214l1.054.15c.48.067.86.447.927.927l.15 1.054a.75.75 0 00.475 1.214l-.93.93a.75.75 0 010 1.06l1.414 1.414a.75.75 0 010 1.06l-.93.93a.75.75 0 00.475 1.214l1.054.15c.48.067.86.447.927.927L22 17.116V10a2 2 0 00-2-2h-.884l-.15-1.054a2 2 0 00-2-2h-1.054a2 2 0 00-1.214-.475l-.93-.93a2 2 0 00-2-2h-1.054a2 2 0 00-1.214-.475l-.93-.93a2 2 0 00-2-2h-1.054a2 2 0 00-1.214-.475l-.93-.93a2 2 0 00-2-2H2v.884l.15 1.054c.067.48.447.86.927.927l1.054.15c.48.067.86.447.927.927l.15 1.054a.75.75 0 00.475 1.214l-.93.93a.75.75 0 010 1.06l1.414 1.414a.75.75 0 010 1.06l-.93.93a.75.75 0 00.475 1.214l1.054.15c.48.067.86.447.927.927l.15 1.054a.75.75 0 00.475 1.214l-.93.93a.75.75 0 010 1.06l1.414 1.414a.75.75 0 010 1.06l-.93.93a.75.75 0 00.475 1.214l1.054.15c.48.067.86.447.927.927L10 22v-2h-.884l-.15-1.054a.75.75 0 00-.475-1.214l-.93-.93a.75.75 0 01-1.06 0l-1.414-1.414a.75.75 0 010-1.06l.93-.93a.75.75 0 00-.475-1.214l-1.054-.15a.75.75 0 00-.927-.927l-.15-1.054a.75.75 0 00-.475-1.214l.93-.93a.75.75 0 010-1.06L4.058 9.942a.75.75 0 010-1.06l.93-.93a.75.75 0 00-.475-1.214L3.454 6.549a.75.75 0 00-.927-.927L2 5V2z" clip-rule="evenodd" /></svg>
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.868 2.884c.48.067.86.447.927.927l.15 1.054a.75.75 0 001.214.475l.93-.93a.75.75 0 011.06 0l1.414 1.414a.75.75 0 010 1.06l-.93.93a.75.75 0 00.475 1.214l1.054.15c.48.067.86.447.927.927l.15 1.054a.75.75 0 00.475 1.214l.93-.93a.75.75 0 011.06 0l1.414 1.414a.75.75 0 010 1.06l-.93.93a.75.75 0 00.475 1.214l1.054.15c.48.067.86.447.927.927L22 17.116V10a2 2 0 00-2-2h-.884l-.15-1.054a2 2 0 00-2-2h-1.054a2 2 0 00-1.214-.475l-.93-.93a2 2 0 00-2-2h-1.054a2 2 0 00-1.214-.475l-.93-.93a2 2 0 00-2-2H2v.884l.15 1.054c.067.48.447.86.927.927l1.054.15c.48.067.86.447.927.927l.15 1.054a.75.75 0 00.475 1.214l-.93.93a.75.75 0 010 1.06l1.414 1.414a.75.75 0 010 1.06l-.93.93a.75.75 0 00-.475-1.214l-1.054-.15a.75.75 0 00-.927-.927l-.15-1.054a.75.75 0 00-.475-1.214l.93-.93a.75.75 0 010-1.06L4.058 9.942a.75.75 0 010-1.06l.93-.93a.75.75 0 00-.475-1.214L3.454 6.549a.75.75 0 00-.927-.927L2 5V2z" clip-rule="evenodd" /></svg>
                     Write a Google Review
                 </a>
             </div>
@@ -388,7 +418,18 @@
                     <li><a href="#" class="text-base text-gray-600 hover:text-gray-900" data-policy="cancellation">Cancellation Policy</a></li>
                     <li><a href="#" class="text-base text-gray-600 hover:text-gray-900" data-policy="refund">Refund Policy</a></li>
                 </ul></div>
-                <div><h3 class="text-sm font-semibold text-gray-500 tracking-wider uppercase">Contact</h3><div class="mt-4 space-y-2 text-base text-gray-600"><p>B-502, DLF PH 2 SECTOR 25</p><p>GURGAON, PIN 122002</p><p>+91-852749391 / 8178838869</p></div></div>
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-500 tracking-wider uppercase">Contact</h3>
+                    <div class="mt-4 space-y-2 text-base text-gray-600">
+                        <p>B-502, DLF PH 2 SECTOR 25</p>
+                        <p>GURGAON, PIN 122002</p>
+                        <p>+91-852749391 / 8178838869</p>
+                        <a href="https://www.instagram.com/indotravo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-gray-700 font-semibold hover:text-gray-900">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.25.148 4.773 1.674 4.92 4.92.058 1.266.07 1.646.07 4.85 0 3.204-.012 3.584-.07 4.85-0.148 3.25-1.674 4.773-4.92 4.92-1.266.058-1.646.07-4.85.07-3.204 0-3.584-.012-4.85-.07-3.25-0.148-4.773-1.674-4.92-4.92-0.058-1.266-0.07-1.646-0.07-4.85s0.012-3.584.07-4.85c0.148-3.25 1.674-4.773 4.92-4.92 1.266-0.058 1.646-0.07 4.85-0.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.623-6.979 6.98-0.059 1.28-0.073 1.688-0.073 4.948s0.014 3.668 0.072 4.948c0.2 4.358 2.623 6.782 6.98 6.98 1.28.058 1.688.072 4.948.072s3.668-0.014 4.948-0.072c4.354-0.2 6.78-2.625 6.979-6.98 0.059-1.28 0.073-1.688 0.073-4.948s-0.014-3.668-0.072-4.948c-0.199-4.358-2.624-6.78-6.979-6.98-1.28-.059-1.688-.073-4.948-0.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.791-4-4s1.791-4 4-4 4 1.791 4 4c0 2.208-1.791 4-4 4zm6.406-11.845c-.796 0-1.44-.644-1.44-1.44s.644-1.44 1.44-1.44 1.44.644 1.44 1.44c0 .795-.644 1.44-1.44 1.44z"/></svg>
+                            Instagram
+                        </a>
+                    </div>
+                </div>
             </div>
             <div class="mt-8 border-t border-gray-200/80 pt-8 text-center text-base text-gray-500"><p>&copy; 2025 IndoTravo. All rights reserved.</p></div>
         </div>
@@ -398,13 +439,9 @@
         <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 4.315 1.731 6.086l.287.468-1.173 4.249 4.35-1.14z"/></svg>
     </a>
 
-    <a href="https://www.instagram.com/indotravo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" class="fixed bottom-24 right-6 bg-pink-600 w-16 h-16 rounded-full flex items-center justify-center shadow-lg z-50 transform hover:scale-110 transition-transform">
-        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.715.01 3.655.053 1.018.04 1.79.202 2.42.482.597.264.996.603 1.482 1.08.485.484.823.882 1.08 1.48.28.63.443 1.403.483 2.42.04 1.015.054 1.3 0 3.655-.053 1.018-.202 1.79-.482 2.42-.264.597-.603.996-1.08 1.482-.484.485-.882.823-1.48 1.08-.63.28-1.403.443-2.42.483-1.015.04-1.3.054-3.655 0-2.43 0-2.715-.01-3.655-.053-1.018-.04-1.79-.202-2.42-.482-.597-.264-.996-.603-1.482-1.08-.485-.484-.823-.882-1.08-1.48-.28-.63-.443-1.403-.483-2.42-.04-1.015-.054-1.3 0-3.655.053-1.018.202-1.79.482-2.42.264-.597.603-.996 1.08-1.482.484-.485.823-.882 1.48-1.08.63-.28 1.403-.443 2.42-.483C9.695 2.01 9.41 2 12.315 2zm0 0l-1.006 4.903-1.498-1.498zm0 1.93c-2.315 0-2.585.01-3.493.053-1.002.04-1.644.202-2.093.402-.495.22-.84.475-1.226.86-.386.386-.64.73-.86 1.226-.2.45-.362 1.092-.402 2.093-.043.908-.053 1.178-.053 3.493s.01 2.585.053 3.493c.04 1.002.202 1.644.402 2.093.22.495.475.84.86 1.226.386.386.73.64 1.226.86.45.2 1.092.362 2.093.402.908.043 1.178.053 3.493.053s2.585-.01 3.493-.053c1.002-.04 1.644-.202 2.093-.402.495-.22.475-.84.86-1.226.386-.386.73-.64 1.226-.86.45-.2 1.092-.362 2.093-.402-.908-.043-1.178-.053-3.493-.053zm-1.5 5.86c0 2.21 1.79 4 4 4s4-1.79 4-4-1.79-4-4-4-4 1.79-4 4zm4 6.13a6 6 0 100-12 6 6 0 000 12z"></path></svg>
-    </a>
-
     <div id="contact-modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 z-[60] flex items-center justify-center p-4 opacity-0 pointer-events-none">
         <div class="modal-container bg-white rounded-2xl shadow-xl w-full max-w-md p-8 text-center transform scale-95 opacity-0">
-            <button id="close-contact-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800 transition-colors">
+            <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800 transition-colors">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
             <h2 class="text-2xl font-bold mb-4">Get in Touch</h2>
@@ -614,7 +651,7 @@
                 const modalOverlay = modal.querySelector('.modal-overlay');
                 const modalContainer = modal.querySelector('.modal-container');
                 const openModalButtons = document.querySelectorAll('.open-contact-modal');
-                const closeModalButton = document.getElementById('close-contact-modal'); // Updated ID
+                const closeModalButton = document.getElementById('close-modal');
 
                 const openModal = () => {
                     modal.classList.remove('pointer-events-none');
@@ -637,148 +674,6 @@
                 closeModalButton.addEventListener('click', closeModal);
                 modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
             }
-
-            // Mobile Menu Logic
-            const mobileMenuButton = document.getElementById('mobile-menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const closeMobileMenuButton = document.getElementById('close-mobile-menu');
-
-            function openMobileMenu() {
-                mobileMenu.classList.remove('-translate-x-full');
-            }
-
-            function closeMobileMenu() {
-                mobileMenu.classList.add('-translate-x-full');
-            }
-
-            if (mobileMenuButton) {
-                mobileMenuButton.addEventListener('click', openMobileMenu);
-            }
-            if (closeMobileMenuButton) {
-                closeMobileMenuButton.addEventListener('click', closeMobileMenu);
-            }
-            // Close mobile menu when a navigation link is clicked
-            mobileMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', closeMobileMenu);
-            });
-
-
-            // Policy Modal Logic
-            const policyModal = document.getElementById('policy-modal');
-            const closePolicyModalButton = document.getElementById('close-policy-modal');
-            const policyModalTitle = document.getElementById('policy-modal-title');
-            const policyModalContent = document.getElementById('policy-modal-content');
-            const policyLinks = document.querySelectorAll('a[data-policy]');
-
-            const policies = {
-                terms: {
-                    title: "Terms & Conditions",
-                    content: `
-                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Welcome to INDOTRAVO.COM</h3>
-                        <p class="mb-4">We welcome the visitors to our website “INDOTRAVO.COM”. This website was developed with the purpose of making available to you to find out and browse the information, services and brands owned by INDOTRAVO your travel partner.</p>
-                        <p class="mb-4">If you continue to browse and use this website you are agreeing to comply with the following terms and condition of our website.</p>
-                        
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Usage of Information</h3>
-                        <p class="mb-4">There is no agreement between us and the visitors to our website under which we provide any guarantee or warranty of any kind for the accuracy, timeliness, performance, completeness or suitability of the information, brand or services found or offered on this website for any particular purpose. We are not under any liability under the law if the site has materials which may contain inaccuracies or errors. The usage of information available on this website is entirely at your own risk and should be used for your own personal, non-commercial use only and non-compliance will be considered as an offence and leads to damage/claim.</p>
-                        <p class="mb-4">The foremost purpose of using this website is to find out and obtaining information on the products and services offered by our Company. You get access to our services and brands that are available on our website, choose products and brand, select your preference, contact with us, submit your views and comments on our Group and our products and services.</p>
-                        
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Intellectual Property</h3>
-                        <p class="mb-4">The content of this website is owned by or licensed to us including the copyrights. This website may also contain links to other websites which are only with the purpose to provide more information to you. You may not link this website to another website without the owner’s prior written consent. The breach of this condition may result into legal dispute and further lead to claims and damages based on the extent of the offence.</p>
-                        
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Pricing and Conditions</h3>
-                        <p class="mb-4">Prices displayed for the products and services on INDOTRAVO.COM are subject to change without prior information or notice. The price are valid for minimum 02 adults travelling together.</p>
-                        <p class="mb-4">In the case of bad weather conditions, we try our best to find similar activities/transfers.</p>
-                        <p class="mb-4">Any cost or cancellation charge because of any unforeseen conditions is not included.</p>
-                        <p class="mb-4">Travelers are requested to take care of their belongings.</p>
-                        <p class="mb-4">Note that the paid amount is only refundable according to the cancellation policy as mentioned below.</p>
-                    `
-                },
-                privacy: {
-                    title: "Privacy Policy",
-                    content: `
-                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Information Collection and Use</h3>
-                        <p class="mb-4">When you purchase something from our website, as part of the buying process, we collect the personal information you give us such as your name, address and email address. With your permission, we may send you emails about our store, new products and other updates.</p>
-                        <p class="mb-4">We may disclose your personal information if we are required by law to do so or if you violate our Terms of Service.</p>
-                        
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Data Security</h3>
-                        <p class="mb-4">To protect your personal information, we take reasonable precautions and follow industry best practices to make sure it is not inappropriately lost, misused, accessed, disclosed, altered or destroyed.</p>
-                        
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Third-Party Links</h3>
-                        <p class="mb-4">When you click on links on our store, they may direct you away from our site. We are not responsible for the privacy practices of other sites and encourage you to read their privacy statements.</p>
-                        
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Policy Changes</h3>
-                        <p class="mb-4">We reserve the right to modify this privacy policy at any time, so please review it frequently. Changes and clarifications will take effect immediately upon their posting on the website. If we make material changes to this policy, we will notify you here that it has been updated, so that you are aware of what information we collect, how we use it, and under what circumstances, if any, we use and/or disclose it. If our store is acquired or merged with another company, your information may be transferred to the new owners so that we may continue to sell products to you.</p>
-                        
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Contact Us</h3>
-                        <p class="mb-4">If you would like to: access, correct, amend or delete any personal information we have about you, simply contact us at <strong>info@indotravo.com</strong></p>
-                    `
-                },
-                cancellation: {
-                    title: "Cancellation Policy",
-                    content: `
-                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Cancellation Terms</h3>
-                        <ul class="list-disc pl-5 space-y-2 mb-4">
-                            <li>Cancellation process will be taken into consideration if the cancellation request is made within 72 hours of placing an order.</li>
-                            <li>There is no cancellation of orders which is commencing on the same day of placing an order.</li>
-                            <li>Cancellation of orders will not be considered for those which have been booked under the category of limited special offers.</li>
-                            <li>You can always bring it to our notice within 24 hours of receiving the product that if you feel the offer received is not the same as shown on the site or as per your expectations. Our Customer Service Team will immediately look into the complaint and will take appropriate action.</li>
-                            <li>Some bookings may be non-refundable as per the specific airline’s policy.</li>
-                            <li>Please note that convenience fee charged at the time of booking is non-refundable.</li>
-                        </ul>
-                    `
-                },
-                refund: {
-                    title: "Refund Policy",
-                    content: `
-                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Refund Facility</h3>
-                        <p class="mb-4">You enjoy a reliable and hassle-free refund facility with INDOTRAVO. In case, for any reason, you are not pleased with the order placed by you, you are always free to apply for a refund. To request a refund, you can contact us with your order details within three days of your purchase.</p>
-                        <p class="mb-4">Your refund request reason is optional; however you are always welcome to share your feedback as we feel that customer feedback is precious and will take very seriously and use it to constantly improve our offers and quality of services. Refunds will be processed within 21 days period.</p>
-                        
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Specific Conditions</h3>
-                        <ul class="list-disc pl-5 space-y-2 mb-4">
-                            <li>Refund for hotel payment will follow the hotel’s cancellation policy.</li>
-                            <li>Flight tickets cancellations will follow the airlines policy.</li>
-                            <li>Please note that convenience fee charged at the time of booking will not be refundable.</li>
-                        </ul>
-                        <p class="mb-4">To ensure the best experience possible, we are there with you always.</p>
-                    `
-                }
-            };
-
-            function openPolicyModal(policyType) {
-                const policy = policies[policyType];
-                if (policy) {
-                    policyModalTitle.textContent = policy.title;
-                    policyModalContent.innerHTML = policy.content;
-                    policyModal.classList.remove('pointer-events-none');
-                    policyModal.classList.add('opacity-100');
-                    policyModal.querySelector('.modal-container').classList.add('scale-100', 'opacity-100');
-                    policyModal.querySelector('.modal-container').classList.remove('scale-95', 'opacity-0');
-                }
-            }
-
-            function closePolicyModal() {
-                policyModal.querySelector('.modal-container').classList.remove('scale-100', 'opacity-100');
-                policyModal.querySelector('.modal-container').classList.add('scale-95', 'opacity-0');
-                policyModal.classList.remove('opacity-100');
-                policyModal.classList.add('pointer-events-none');
-            }
-
-            policyLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const policyType = e.target.dataset.policy;
-                    openPolicyModal(policyType);
-                });
-            });
-
-            if (closePolicyModalButton) {
-                closePolicyModalButton.addEventListener('click', closePolicyModal);
-            }
-            policyModal.addEventListener('click', (e) => {
-                if (e.target === policyModal) closePolicyModal();
-            });
-
 
             // Initial call to attach listeners for existing elements (like header contact button)
             attachContactModalListeners();
