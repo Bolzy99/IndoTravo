@@ -113,6 +113,18 @@
         .modal-container {
             transition: transform 0.3s ease, opacity 0.3s ease;
         }
+
+        /* Specific styles for scrollable reviews */
+        .review-column {
+            max-height: 400px; /* Adjust height as needed */
+            overflow-y: auto;
+            scroll-snap-type: y mandatory;
+            -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
+        }
+        .review-card {
+            scroll-snap-align: start;
+            margin-bottom: 1rem; /* Space between reviews */
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -120,13 +132,21 @@
     <header class="w-full py-4 px-4 sm:px-6 lg:px-8 bg-[#FDFCF8]/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200/50">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <a href="#"><img src="images/logo.jpg" alt="IndoTravo Logo" class="h-10 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/150x40/000000/ffffff?text=IndoTravo';"></a>
-            <nav class="hidden md:flex items-center space-x-8">
+            <nav id="mobile-menu" class="hidden md:flex flex-col md:flex-row items-center md:space-x-8 space-y-4 md:space-y-0 mt-4 md:mt-0 w-full md:w-auto absolute md:relative top-full left-0 bg-[#FDFCF8]/80 md:bg-transparent backdrop-blur-sm md:backdrop-blur-none py-4 md:py-0 transition-all duration-300 ease-in-out max-h-0 md:max-h-full overflow-hidden md:overflow-visible">
                 <a href="#about" class="text-gray-600 hover:text-gray-900 transition-colors">About Us</a>
                 <a href="#destinations" class="text-gray-600 hover:text-gray-900 transition-colors">Destinations</a>
                 <a href="#plans-section-container" class="text-gray-600 hover:text-gray-900 transition-colors">Plans</a>
                 <a href="#" class="text-gray-600 hover:text-gray-900 transition-colors open-contact-modal">Contact</a>
+                <a href="https://www.instagram.com/indotravo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="text-gray-600 hover:text-gray-900 transition-colors text-sm px-3 py-1 border border-gray-300 rounded-full flex items-center">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-5 h-5 mr-1"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 0C8.783 0 8.358 0.013 7.051 0.076C5.743 0.141 4.898 0.495 4.095 0.817C3.291 1.139 2.478 1.691 1.764 2.404C1.05 3.118 0.498 3.931 0.176 4.735C-0.146 5.538 -0.5 6.383 -0.565 7.691C-0.628 8.998 -0.641 9.423 -0.641 12C-0.641 14.577 -0.628 15.002 -0.565 16.309C-0.5 17.617 -0.146 18.462 0.176 19.265C0.498 20.069 1.05 20.882 1.764 21.596C2.478 22.31 3.291 22.861 4.095 23.183C4.898 23.505 5.743 23.859 7.051 23.924C8.358 23.987 8.783 24 12 24C15.217 24 15.642 23.987 16.949 23.924C18.257 23.859 19.102 23.505 19.905 23.183C20.709 22.861 21.522 22.31 22.236 21.596C22.95 20.882 23.502 20.069 23.824 19.265C24.146 18.462 24.5 17.617 24.565 16.309C24.628 15.002 24.641 14.577 24.641 12C24.641 9.423 24.628 8.998 24.565 7.691C24.5 6.383 24.146 5.538 23.824 4.735C23.502 3.931 22.95 3.118 22.236 2.404C21.522 1.691 20.709 1.139 19.905 0.817C19.102 0.495 18.257 0.141 16.949 0.076C15.642 0.013 15.217 0 12 0ZM12 2C15.155 2 15.54 2.012 16.828 2.072C18.114 2.132 18.665 2.441 19.043 2.593C19.42 2.744 19.78 2.946 20.126 3.292C20.472 3.638 20.675 3.998 20.826 4.375C20.978 4.753 21.287 5.304 21.347 6.591C21.407 7.879 21.419 8.264 21.419 12C21.419 15.736 21.407 16.121 21.347 17.409C21.287 18.696 20.978 19.247 20.826 19.625C20.675 20.002 20.472 20.362 20.126 20.708C19.78 21.054 19.42 21.256 19.043 21.407C18.665 21.559 18.114 21.868 16.828 21.928C15.54 21.988 15.155 22 12 22C8.845 22 8.46 21.988 7.172 21.928C5.886 21.868 5.335 21.559 4.957 21.407C4.58 21.256 4.22 21.054 3.874 20.708C3.528 20.362 3.325 20.002 3.174 19.625C3.022 19.247 2.713 18.696 2.653 17.409C2.593 16.121 2.581 15.736 2.581 12C2.581 8.264 2.593 7.879 2.653 6.591C2.713 5.304 3.022 4.753 3.174 4.375C3.325 3.998 3.528 3.638 3.874 3.292C4.22 2.946 4.58 2.744 4.957 2.593C5.335 2.441 5.886 2.132 7.172 2.072C8.46 2.012 8.845 2 12 2Z"></path><path d="M12 7.747C9.654 7.747 7.747 9.654 7.747 12C7.747 14.346 9.654 16.253 12 16.253C14.346 16.253 16.253 14.346 16.253 12C16.253 9.654 14.346 7.747 12 7.747ZM12 14.253C10.758 14.253 9.747 13.242 9.747 12C9.747 10.758 10.758 9.747 12 9.747C13.242 9.747 14.253 10.758 14.253 12C14.253 13.242 13.242 14.253 12 14.253Z"></path><path d="M18.423 3.447C17.653 3.447 17.025 4.075 17.025 4.846C17.025 5.617 17.653 6.245 18.423 6.245C19.194 6.245 19.822 5.617 19.822 4.846C19.822 4.075 19.194 3.447 18.423 3.447Z" fill="currentColor"></path></svg>
+                    Instagram
+                </a>
             </nav>
-            <div class="md:hidden"><button class="text-gray-800"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button></div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -148,13 +168,13 @@
              <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center" data-aos="fade-up">
                 <div class="text-left">
                     <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Crafting Journeys, Creating Memories.</h2>
-                    <p class="mt-6 text-lg text-gray-600">Founded by <span class="font-semibold text-gray-800">SHALLY</span>, who spent 15 enriching years living amidst the stunning landscapes and vibrant culture of Switzerland, INDOTRAVO is your gateway to unforgettable Swiss adventures.</p>
+                    <p class="mt-6 text-lg text-gray-600">Founded by <span class="font-semibold text-gray-800">SHALLY</span>, a passionate globetrotter with over 15 enriching years living amidst the stunning landscapes and vibrant culture of Switzerland, INDOTRAVO was born from a deep love for exploration.</p>
                     <blockquote class="mt-6 border-l-4 border-gray-300 pl-4 italic text-gray-700">
-                        "Fifteen years ago, I embarked on a journey that would forever change my life. Switzerland captured my heart from the moment I arrived. Every corner holds a treasure trove of experiences waiting to be discovered."
+                        "My years in Switzerland were truly transformative, revealing the profound beauty and unique experiences travel can offer. I believe every journey holds the potential for lifelong memories and meaningful connections, no matter where in the world you choose to explore."
                     </blockquote>
-                    <p class="mt-6 text-gray-600">Driven by a desire to share the magic of Switzerland, we are dedicated to curating exceptional experiences that immerse you in its essence. We believe travel is about forging meaningful connections and creating lifelong memories.</p>
-                    <p class="mt-4 text-gray-600">What sets us apart is our genuine love for Switzerland and our commitment to crafting personalized journeys. From meticulously curated itineraries to insider tips, we go above and beyond to ensure every moment is extraordinary.</p>
-                    <p class="mt-6 font-semibold text-gray-800">Ready to embark on your Swiss adventure? Let's start planning the journey of a lifetime together.</p>
+                    <p class="mt-6 text-lg text-gray-600">Driven by a desire to share this magic, INDOTRAVO is dedicated to curating exceptional and personalized travel experiences, not just for Switzerland, but across the globe. We aim to immerse you in the essence of each destination, ensuring every moment is extraordinary.</p>
+                    <p class="mt-4 text-lg text-gray-600">What sets us apart is our genuine commitment to understanding your unique travel dreams and crafting journeys that exceed expectations. From meticulously curated itineraries to insider tips and 24/7 support, we go above and beyond to make your adventure seamless and unforgettable.</p>
+                    <p class="mt-6 font-semibold text-gray-800">Ready to embark on your next global adventure? Let's start planning the journey of a lifetime together.</p>
                 </div>
                 <div class="bg-gray-100 h-96 w-full rounded-3xl flex items-center justify-center order-first lg:order-last">
                      <img src="images/founder-shally.jpg" alt="Shally, founder of IndoTravo" class="w-full h-full object-cover rounded-3xl" onerror="this.onerror=null;this.src='https://placehold.co/400x480/e2e8f0/a0aec0?text=Shally+-+Founder';">
@@ -162,27 +182,57 @@
             </div>
         </section>
 
-        <section id="destinations" class="py-20 lg:py-24 space-y-20">
-            <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-right">
-                <div class="text-left md:pr-12">
-                    <h2 class="text-4xl font-bold tracking-tight">Personalized trips.</h2>
-                    <p class="mt-4 text-lg text-gray-600">Expert-crafted itineraries tailored to your preferences for unforgettable experiences.</p>
+        <section id="destinations" class="py-20 lg:py-24">
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-center mb-12" data-aos="fade-up">Top Destinations</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="relative group h-64 md:h-80 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+                    <img src="images/santorini.jpg" alt="Santorini" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/e2e8f0/a0aec0?text=Santorini';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                        <h3 class="text-white text-xl font-semibold">Santorini</h3>
+                    </div>
                 </div>
-                <div class="bg-white h-64 w-full rounded-3xl shadow-sm"><img src="images/feature-personalized.jpg" alt="Personalized trip" class="w-full h-full object-cover rounded-3xl" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e2e8f0/a0aec0?text=Custom+Trip';"></div>
-            </div>
-            <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-left">
-                <div class="bg-white h-64 w-full rounded-3xl order-last md:order-first shadow-sm"><img src="images/feature-destinations.jpg" alt="Top destinations" class="w-full h-full object-cover rounded-3xl" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e2e8f0/a0aec0?text=Top+Destinations';"></div>
-                <div class="text-left md:pl-12">
-                    <h2 class="text-4xl font-bold tracking-tight">Top destinations.</h2>
-                    <p class="mt-4 text-lg text-gray-600">Discover packages for Paris, Bali, Japan, Kenya safaris, and more trending spots.</p>
+                <div class="relative group h-64 md:h-80 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+                    <img src="images/kyoto.jpg" alt="Kyoto" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/e2e8f0/a0aec0?text=Kyoto';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                        <h3 class="text-white text-xl font-semibold">Kyoto</h3>
+                    </div>
                 </div>
-            </div>
-            <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-right">
-                <div class="text-left md:pr-12">
-                    <h2 class="text-4xl font-bold tracking-tight">24/7 support.</h2>
-                    <p class="mt-4 text-lg text-gray-600">Reliable assistance before, during, and after your journey for peace of mind.</p>
+                <div class="relative group h-64 md:h-80 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+                    <img src="images/peru.jpg" alt="Peru" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/e2e8f0/a0aec0?text=Peru';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                        <h3 class="text-white text-xl font-semibold">Peru</h3>
+                    </div>
                 </div>
-                <div class="bg-white h-64 w-full rounded-3xl shadow-sm"><img src="images/feature-support.jpg" alt="24/7 support" class="w-full h-full object-cover rounded-3xl" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e2e8f0/a0aec0?text=Support+Team';"></div>
+                <div class="relative group h-64 md:h-80 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+                    <img src="images/paris.jpg" alt="Paris" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/e2e8f0/a0aec0?text=Paris';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                        <h3 class="text-white text-xl font-semibold">Paris</h3>
+                    </div>
+                </div>
+                <div class="relative group h-64 md:h-80 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+                    <img src="images/dubai.jpg" alt="Dubai" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/e2e8f0/a0aec0?text=Dubai';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                        <h3 class="text-white text-xl font-semibold">Dubai</h3>
+                    </div>
+                </div>
+                <div class="relative group h-64 md:h-80 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+                    <img src="images/south-africa.jpg" alt="South Africa" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/e2e8f0/a0aec0?text=South+Africa';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                        <h3 class="text-white text-xl font-semibold">South Africa</h3>
+                    </div>
+                </div>
+                <div class="relative group h-64 md:h-80 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+                    <img src="images/bali.jpg" alt="Bali" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/e2e8f0/a0aec0?text=Bali';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                        <h3 class="text-white text-xl font-semibold">Bali</h3>
+                    </div>
+                </div>
+                <div class="relative group h-64 md:h-80 rounded-xl overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-105">
+                    <img src="images/iceland.jpg" alt="Iceland" class="w-full h-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/400x400/e2e8f0/a0aec0?text=Iceland';">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                        <h3 class="text-white text-xl font-semibold">Iceland</h3>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -190,8 +240,8 @@
             <h2 class="text-4xl md:text-5xl font-bold tracking-tight" data-aos="fade-up">Destination Highlights</h2>
             <p class="mt-3 text-xl text-gray-500" data-aos="fade-up" data-aos-delay="100">A glimpse into your next adventure.</p>
             
-            <div class="mt-16 flex justify-center items-center gap-8" data-aos="fade-up" data-aos-delay="200" style="perspective: 1200px;">
-                <div class="hidden lg:block transform scale-75 -rotate-12" style="transform-style: preserve-3d;">
+            <div class="mt-16 flex flex-col md:flex-row justify-center items-center gap-8" data-aos="fade-up" data-aos-delay="200" style="perspective: 1200px;">
+                <div class="transform scale-75 md:scale-75 -rotate-12" style="transform-style: preserve-3d;">
                     <div class="iphone-mockup"><div class="iphone-notch"></div><div class="iphone-screen"><div class="image-scroller">
                         <img src="images/left-phone-1.jpg" alt="Highlight 1" onerror="this.onerror=null;this.src='https://placehold.co/600x1200/8b5cf6/ffffff?text=Alps';">
                         <img src="images/left-phone-2.jpg" alt="Highlight 2" onerror="this.onerror=null;this.src='https://placehold.co/600x1200/ec4899/ffffff?text=Zurich';">
@@ -213,291 +263,455 @@
                     </div></div></div>
                 </div>
 
-                <div class="hidden lg:block transform scale-75 rotate-12" style="transform-style: preserve-3d;">
+                <div class="transform scale-75 md:scale-75 rotate-12" style="transform-style: preserve-3d;">
                     <div class="iphone-mockup"><div class="iphone-notch"></div><div class="iphone-screen"><div class="image-scroller">
-                           <img src="images/right-phone-1.jpg" alt="Highlight 4" onerror="this.onerror=null;this.src='https://placehold.co/600x1200/22c55e/ffffff?text=Lucerne';">
-                           <img src="images/right-phone-2.jpg" alt="Highlight 5" onerror="this.onerror=null;this.src='https://placehold.co/600x1200/0ea5e9/ffffff?text=Interlaken';">
-                           <img src="images/right-phone-3.jpg" alt="Highlight 6" onerror="this.onerror=null;this.src='https://placehold.co/600x1200/6366f1/ffffff?text=Zermatt';">
-                           <img src="images/right-phone-1.jpg" alt="Highlight 4" onerror="this.onerror=null;this.src='https://placehold.co/600x1200/22c55e/ffffff?text=Lucerne';">
-                           <img src="images/right-phone-2.jpg" alt="Highlight 5" onerror="this.onerror=null;this.src='https://placehold.co/600x1200/0ea5e9/ffffff?text=Interlaken';">
-                           <img src="images/right-phone-3.jpg" alt="Highlight 6" onerror="this.onerror=null;this.src='https://placehold.co/600x1200/6366f1/ffffff?text=Zermatt';">
+                        <img src="images/right-phone-1.jpg" alt="Highlight 4" onerror="this.onerror=null;this.src='https://placehold.co/600x1200/22c55e/ffffff?text=Lucerne';">
+                        <img src="images/right-phone-2.jpg" alt="Highlight 5" onerror="this.onerror=null;this.src='https://placehold.co/600x1200/0ea5e9/ffffff?text=Interlaken';">
+                        <img src="images/right-phone-3.jpg" alt="Highlight 6" onerror="this.onerror=null;this.src='https://placehold.co/600x1200/6366f1/ffffff?text=Zermatt';">
+                        <img src="images/right-phone-1.jpg" alt="Highlight 4" onerror="this.onerror=null;this.src='https://placehold.co/600x1200/22c55e/ffffff?text=Lucerne';">
+                        <img src="images/right-phone-2.jpg" alt="Highlight 5" onerror="this.onerror=null;this.src='https://placehold.co/600x1200/0ea5e9/ffffff?text=Interlaken';">
+                        <img src="images/right-phone-3.jpg" alt="Highlight 6" onerror="this.onerror=null;this.src='https://placehold.co/600x1200/6366f1/ffffff?text=Zermatt';">
                     </div></div></div>
                 </div>
             </div>
         </section>
 
-        <div id="plans-section-container">
+        <section id="plans-section-container" class="py-20 lg:py-24 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tight" data-aos="fade-up">Our Curated Plans</h2>
+            <p class="mt-3 text-xl text-gray-500" data-aos="fade-up" data-aos-delay="100">Find your perfect adventure.</p>
+            <div class="mt-10 p-6 bg-blue-50 border border-blue-200 text-blue-800 rounded-lg max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                <p>Travel plans will be dynamically loaded here from your `travel_plans.json` file on GitHub.</p>
+                <p class="mt-2 text-sm">Make sure your n8n workflow is set up to fetch and display them.</p>
             </div>
-
-        <section class="py-20 lg:py-24">
-            <div class="text-center">
-                <h2 class="text-4xl md:text-5xl font-bold tracking-tight">What travelers say</h2>
-                <p class="mt-3 text-xl text-gray-500">Trusted by globetrotters worldwide.</p>
-            </div>
-            <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white p-6 rounded-3xl shadow-sm" data-aos="fade-up" data-aos-delay="0"><p class="text-gray-700">"Perfectly organized Bali trip."</p><div class="mt-4"><p class="font-bold">Amit</p><p class="text-sm text-gray-500">Photographer</p></div></div>
-                <div class="bg-white p-6 rounded-3xl shadow-sm" data-aos="fade-up" data-aos-delay="100"><p class="text-gray-700">"Exceptional service in Tokyo."</p><div class="mt-4"><p class="font-bold">Priya</p><p class="text-sm text-gray-500">Designer</p></div></div>
-                <div class="bg-white p-6 rounded-3xl shadow-sm" data-aos="fade-up" data-aos-delay="200"><p class="text-gray-700">"The Kenya safari was a dream."</p><div class="mt-4"><p class="font-bold">Ravi</p><p class="text-sm text-gray-500">Travel Blogger</p></div></div>
-                <div class="bg-white p-6 rounded-3xl shadow-sm" data-aos="fade-up" data-aos-delay="300"><p class="text-gray-700">"Flexible and easy planning."</p><div class="mt-4"><p class="font-bold">Meera</p><p class="text-sm text-gray-500">Entrepreneur</p></div></div>
-            </div>
-        </section>
-
-        <section class="py-20 lg:py-32 text-center">
-            <h2 class="text-5xl md:text-6xl font-bold tracking-tight" data-aos="fade-up">Let's go.</h2>
-            <p class="text-5xl md:text-6xl font-bold tracking-tight text-gray-400 mt-2" data-aos="fade-up" data-aos-delay="100">Travel made simple.</p>
-            <form class="mt-10 max-w-sm mx-auto" data-aos="fade-up" data-aos-delay="200">
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <input type="email" placeholder="name@example.com" class="w-full px-5 py-3 rounded-full bg-white border-gray-200/80 focus:border-gray-500 focus:ring-0 transition">
-                    <button type="submit" class="bg-gray-900 text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-700 transition-all duration-300 shadow-lg">Email address</button>
+            <div class="relative mt-12 overflow-hidden">
+                <div class="plans-slider flex -mx-4">
+                    <div class="plan-card px-4">
+                        <div class="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col justify-between">
+                            <div>
+                                <img src="images/plan-bali.jpg" alt="Bali Escape" class="rounded-lg mb-4 w-full h-48 object-cover">
+                                <h3 class="text-2xl font-semibold text-gray-900">Bali Escape</h3>
+                                <p class="text-lg text-gray-700 mt-2">Starts from ₹25,000</p>
+                                <ul class="list-disc list-inside text-gray-600 text-left mt-4 space-y-1">
+                                    <li>Hotel stays</li>
+                                    <li>Flight tickets</li>
+                                    <li>Local tours</li>
+                                </ul>
+                            </div>
+                            <button class="mt-6 bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors">View Details</button>
+                        </div>
+                    </div>
+                    <div class="plan-card px-4">
+                        <div class="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col justify-between">
+                            <div>
+                                <img src="images/plan-paris.jpg" alt="Parisian Romance" class="rounded-lg mb-4 w-full h-48 object-cover">
+                                <h3 class="text-2xl font-semibold text-gray-900">Parisian Romance</h3>
+                                <p class="text-lg text-gray-700 mt-2">Starts from ₹75,000</p>
+                                <ul class="list-disc list-inside text-gray-600 text-left mt-4 space-y-1">
+                                    <li>Luxury Hotel</li>
+                                    <li>Eiffel Tower Visit</li>
+                                    <li>Seine River Cruise</li>
+                                </ul>
+                            </div>
+                            <button class="mt-6 bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors">View Details</button>
+                        </div>
+                    </div>
+                     <div class="plan-card px-4">
+                        <div class="bg-white rounded-xl shadow-lg p-6 h-full flex flex-col justify-between">
+                            <div>
+                                <img src="images/plan-japan.jpg" alt="Japan Cherry Blossom" class="rounded-lg mb-4 w-full h-48 object-cover">
+                                <h3 class="text-2xl font-semibold text-gray-900">Japan Cherry Blossom</h3>
+                                <p class="text-lg text-gray-700 mt-2">Starts from ₹1,20,000</p>
+                                <ul class="list-disc list-inside text-gray-600 text-left mt-4 space-y-1">
+                                    <li>Traditional Ryokan Stay</li>
+                                    <li>Cherry Blossom Viewing</li>
+                                    <li>Bullet Train Experience</li>
+                                </ul>
+                            </div>
+                            <button class="mt-6 bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition-colors">View Details</button>
+                        </div>
+                    </div>
                 </div>
-            </form>
+                <button class="absolute left-0 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg z-10 hidden md:block" id="prev-plan">
+                    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <button class="absolute right-0 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg z-10 hidden md:block" id="next-plan">
+                    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
         </section>
+
+        <section id="testimonials" class="py-20 lg:py-24 bg-gray-50">
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tight text-center mb-12" data-aos="fade-up">What Travelers Say</h2>
+            <p class="mt-3 text-xl text-gray-500 text-center mb-10" data-aos="fade-up" data-aos-delay="100">Authentic experiences from our cherished clients.</p>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white rounded-xl shadow-lg p-6 review-card" data-aos="fade-up">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/60x60/FFD700/000000?text=JA" alt="Jyoti Aggarwal" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <p class="font-semibold text-gray-900">Jyoti Aggarwal</p>
+                            <div class="flex text-yellow-400 text-sm">
+                                &#9733;&#9733;&#9733;&#9733;&#9733;
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2">Wonderful Experience with IndoTravel!</h3>
+                    <div class="review-column text-gray-600 text-sm leading-relaxed">
+                        <p>I recently booked a trip through IndoTravel, and I must say, the entire experience was seamless and delightful. From the initial planning stages to the final day of our journey, their team was incredibly responsive, organized, and attentive to every detail. The itinerary was well thought out, accommodations were top-notch, and the local experiences they curated truly made our trip special.</p>
+                        <p class="mt-2">Their guides were knowledgeable and friendly, making us feel safe and well taken care of throughout. IndoTravel went above and beyond to ensure we had an unforgettable vacation. Special thanks to Ms Shally Agarwal who was connected throughout the journey🙂 Highly recommended</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 review-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/60x60/87CEEB/000000?text=EG" alt="Ety Garg" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <p class="font-semibold text-gray-900">Ety Garg</p>
+                            <div class="flex text-yellow-400 text-sm">
+                                &#9733;&#9733;&#9733;&#9733;&#9733;
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2">Couldn’t be happier with the experience!</h3>
+                    <div class="review-column text-gray-600 text-sm leading-relaxed">
+                        <p>I couldn’t be happier with the experience!! From the moment I reached out for help with planning my vacation, Shally and team was incredibly attentive, patient and professional. They took the time to understand my preferences budgets and travel goals and created customized itinerary. Everything from flights to accommodation was perfectly organized. I highly recommend Indo travel for anyone looking for expert travel advice and stress free booking experience.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 review-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/60x60/98FB98/000000?text=SS" alt="Shivank Singh" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <p class="font-semibold text-gray-900">Shivank Singh</p>
+                            <div class="flex text-yellow-400 text-sm">
+                                &#9733;&#9733;&#9733;&#9733;&#9733;
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2">Memorable trip to Almaty!</h3>
+                    <div class="review-column text-gray-600 text-sm leading-relaxed">
+                        <p>Went on new year trip to Almaty with IndoTravo, it was an adventure. Thanks to Shally for being there to assist everyone in any situation. The hotel was good, the transport was also available all the time. Thank you for the memorable trip.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 review-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/60x60/FFA07A/000000?text=GS" alt="Galavi Sharma" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <p class="font-semibold text-gray-900">Galavi Sharma</p>
+                            <div class="flex text-yellow-400 text-sm">
+                                &#9733;&#9733;&#9733;&#9733;&#9733;
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2">Couldn't be happier!</h3>
+                    <div class="review-column text-gray-600 text-sm leading-relaxed">
+                        <p>My second trip to Thailand and I decided to trust Indotravo for my bookings— couldn't be happier!</p>
+                        <p class="mt-2">It was a 2-week-long trip covering multiple cities and they took care of EVERYTHING. Ease of communication is priority for me and they aced that. You can trust them with your travel plans for sure, take my recommendation! 💯</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6 review-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-center mb-4">
+                        <img src="https://placehold.co/60x60/ADD8E6/000000?text=SS" alt="Shrida Shah" class="w-12 h-12 rounded-full object-cover mr-4">
+                        <div>
+                            <p class="font-semibold text-gray-900">Shrida Shah</p>
+                            <div class="flex text-yellow-400 text-sm">
+                                &#9733;&#9733;&#9733;&#9733;&#9733;
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2">Very seamless and smooth process!</h3>
+                    <div class="review-column text-gray-600 text-sm leading-relaxed">
+                        <p>I recently planned a trip for my parents with Indotravel to Dubai and it was very seemless and smooth process. The team took care of all our requirements and made the whole process very easy. The communication was very smooth and the team was very helpful. They even helped us reschedule our itinerary when our flights got delayed. I look forward to more travels with them in the future. Thanks for making this memorable experience for my parents.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-10 text-center" data-aos="fade-up" data-aos-delay="500">
+                <a href="https://g.page/IndoTravo/review?rc" target="_blank" class="bg-blue-600 text-white font-semibold py-3 px-8 rounded-full hover:bg-blue-700 transition-all duration-300 shadow-lg">
+                    Leave us a Review on Google
+                </a>
+            </div>
+        </section>
+
     </main>
 
-    <footer id="contact-footer" class="bg-white/50 border-t border-gray-200/80">
-        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
-                <div class="col-span-2 md:col-span-1"><a href="#"><img src="images/logo.jpg" alt="IndoTravo Logo" class="h-10 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/150x40/000000/ffffff?text=IndoTravo';"></a></div>
-                <div><h3 class="text-sm font-semibold text-gray-500 tracking-wider uppercase">Company</h3><ul class="mt-4 space-y-2"><li><a href="#about" class="text-base text-gray-600 hover:text-gray-900">About</a></li><li><a href="#" class="text-base text-gray-600 hover:text-gray-900">Careers</a></li><li><a href="#" class="text-base text-gray-600 hover:text-gray-900">Reviews</a></li></ul></div>
-                <div><h3 class="text-sm font-semibold text-gray-500 tracking-wider uppercase">Destinations</h3><ul class="mt-4 space-y-2"><li><a href="#" class="text-base text-gray-600 hover:text-gray-900">Paris</a></li><li><a href="#" class="text-base text-gray-600 hover:text-gray-900">Bali</a></li><li><a href="#" class="text-base text-gray-600 hover:text-gray-900">Tokyo</a></li></ul></div>
-                <div><h3 class="text-sm font-semibold text-gray-500 tracking-wider uppercase">Legal</h3><ul class="mt-4 space-y-2"><li><a href="#" class="text-base text-gray-600 hover:text-gray-900">Terms & Conditions</a></li><li><a href="#" class="text-base text-gray-600 hover:text-gray-900">Privacy Policy</a></li><li><a href="#" class="text-base text-gray-600 hover:text-gray-900">Cancellation Policy</a></li><li><a href="#" class="text-base text-gray-600 hover:text-gray-900">Refund Policy</a></li></ul></div>
-                <div><h3 class="text-sm font-semibold text-gray-500 tracking-wider uppercase">Contact</h3><div class="mt-4 space-y-2 text-base text-gray-600"><p>B-502, DLF PH 2 SECTOR 25</p><p>GURGAON, PIN 122002</p><p>+91-852749391 / 8178838869</p></div></div>
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <h3 class="text-xl font-semibold mb-4">IndoTravo</h3>
+                <p class="text-gray-400 text-sm">Your trusted partner in crafting unforgettable global adventures.</p>
             </div>
-            <div class="mt-8 border-t border-gray-200/80 pt-8 text-center text-base text-gray-500"><p>&copy; 2025 IndoTravo. All rights reserved.</p></div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                    <li><a href="#destinations" class="text-gray-400 hover:text-white transition-colors">Destinations</a></li>
+                    <li><a href="#plans-section-container" class="text-gray-400 hover:text-white transition-colors">Plans</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors open-contact-modal">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Legal</h3>
+                <ul class="space-y-2">
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors open-policy-modal" data-policy-type="terms">Terms and Conditions</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors open-policy-modal" data-policy-type="privacy">Privacy Policy</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors open-policy-modal" data-policy-type="cancellation">Cancellation Policy</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white transition-colors open-policy-modal" data-policy-type="refund">Refund Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-10 text-center text-gray-500 text-sm border-t border-gray-700 pt-8">
+            &copy; 2025 IndoTravo. All rights reserved.
         </div>
     </footer>
 
-    <a href="https://wa.me/918527490391" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 bg-[#25D366] w-16 h-16 rounded-full flex items-center justify-center shadow-lg z-50 transform hover:scale-110 transition-transform">
-        <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 4.315 1.731 6.086l.287.468-1.173 4.249 4.35-1.14z"/></svg>
-    </a>
-
-    <div id="contact-modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 z-[60] flex items-center justify-center p-4 opacity-0 pointer-events-none">
-        <div class="modal-container bg-white rounded-2xl shadow-xl w-full max-w-md p-8 text-center transform scale-95 opacity-0">
-            <button id="close-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800 transition-colors">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
-            <h2 class="text-2xl font-bold mb-4">Get in Touch</h2>
-            <p class="text-gray-600 mb-6">Fill out the form below or reach us directly.</p>
-            <form>
-                <div class="space-y-4">
-                    <input type="email" placeholder="Email Address" required class="w-full px-4 py-3 rounded-lg bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 transition">
-                    <input type="tel" placeholder="Contact Number" required class="w-full px-4 py-3 rounded-lg bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 transition">
-                </div>
-                <button type="submit" class="w-full mt-6 bg-gray-900 text-white font-semibold py-3 px-8 rounded-lg hover:bg-gray-700 transition-all duration-300 shadow-lg">Submit Inquiry</button>
-            </form>
-            <div class="mt-6">
-                <p class="text-sm text-gray-500">Or contact us directly:</p>
-                <div class="mt-4 flex flex-col sm:flex-row justify-center items-center gap-4">
-                    <a href="https://wa.me/918527490391" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-green-600 font-semibold hover:text-green-700">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 4.315 1.731 6.086l.287.468-1.173 4.249 4.35-1.14z"/></svg>
-                        Chat on WhatsApp
-                    </a>
-                    <a href="tel:+918527490391" class="flex items-center gap-2 text-gray-700 font-semibold hover:text-gray-900">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                        Call Us
-                    </a>
-                </div>
+    <div id="contact-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-[100] opacity-0 pointer-events-none">
+        <div class="bg-white rounded-lg shadow-xl p-8 max-w-lg w-full transform scale-95 opacity-0 transition-all duration-300 ease-out modal-container">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-900">Contact Us</h3>
+                <button id="close-modal" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
             </div>
+            <p class="text-gray-700 mb-4">Have questions or ready to plan your next adventure? Reach out to us!</p>
+            <form>
+                <div class="mb-4">
+                    <label for="name" class="block text-gray-700 text-sm font-semibold mb-2">Name</label>
+                    <input type="text" id="name" class="shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Your Name">
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email</label>
+                    <input type="email" id="email" class="shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="your@example.com">
+                </div>
+                <div class="mb-6">
+                    <label for="message" class="block text-gray-700 text-sm font-semibold mb-2">Message</label>
+                    <textarea id="message" rows="4" class="shadow-sm appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Tell us about your dream trip..."></textarea>
+                </div>
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg focus:outline-none focus:shadow-outline transition-colors">Send Message</button>
+            </form>
         </div>
     </div>
-    
+
+    <div id="policy-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-[100] opacity-0 pointer-events-none">
+        <div class="bg-white rounded-lg shadow-xl p-8 max-w-2xl w-full h-5/6 overflow-y-auto transform scale-95 opacity-0 transition-all duration-300 ease-out modal-container">
+            <div class="flex justify-between items-center mb-6 border-b pb-4">
+                <h3 id="policy-modal-title" class="text-2xl font-bold text-gray-900"></h3>
+                <button id="close-policy-modal" class="text-gray-500 hover:text-gray-700 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+            <div id="policy-modal-content" class="text-gray-700 leading-relaxed text-sm">
+                </div>
+        </div>
+    </div>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 800, once: true });
-
-        window.addEventListener('scroll', function() {
-            const parallaxBg = document.getElementById('parallax-bg');
-            if (parallaxBg) {
-                parallaxBg.style.transform = 'translateY(' + window.pageYOffset * 0.15 + 'px)';
-            }
+        AOS.init({
+            duration: 800,
+            once: true, // Whether animation should happen only once - while scrolling down
         });
 
         document.addEventListener('DOMContentLoaded', function() {
-            const plansSectionContainer = document.getElementById('plans-section-container');
-
-            // Function to render plans from JSON
-            function renderPlans(plans) {
-                let plansHtml = `
-                    <section id="plans" class="py-20 lg:py-24">
-                        <div class="text-center">
-                            <h2 class="text-4xl md:text-5xl font-bold tracking-tight">Travel Plans</h2>
-                            <p class="mt-3 text-xl text-gray-500">Tailored for all travelers.</p>
-                        </div>
-                        <div class="relative mt-16">
-                            <div class="overflow-hidden max-w-5xl mx-auto" id="plans-container">
-                                <div class="plans-slider" id="plans-slider">
-                                    `;
-
-                plans.forEach(plan => {
-                    const featuresHtml = plan.features.map(feature => `
-                        <li class="flex items-center"><svg class="w-5 h-5 text-green-500 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>${feature}</li>
-                    `).join('');
-
-                    // Determine button text based on plan name (can be extended with specific IDs if needed)
-                    let buttonText = 'Get Started';
-                    let buttonClass = 'bg-gray-900 text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-700 transition-all duration-300 open-contact-modal';
-
-                    if (plan.name === 'Explorer') {
-                        buttonText = 'Choose Plan';
-                        buttonClass = 'bg-gray-900 text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-700 transition-all duration-300 open-contact-modal'; // You might want a different style here
-                    } else if (plan.name === 'Luxury') {
-                        buttonText = 'Contact Us';
-                        buttonClass = 'bg-gray-900 text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-700 transition-all duration-300 open-contact-modal'; // You might want a different style here
-                    } else if (plan.name === 'Adventure') {
-                        buttonText = 'Book Adventure';
-                        buttonClass = 'bg-gray-900 text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-700 transition-all duration-300 open-contact-modal'; // You might want a different style here
-                    } else if (plan.name === 'Family Fun') {
-                        buttonText = 'Plan Family Trip';
-                        buttonClass = 'bg-gray-900 text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-700 transition-all duration-300 open-contact-modal'; // You might want a different style here
-                    }
-
-
-                    // Add special styling for 'Explorer' plan
-                    const cardInnerClass = plan.name === 'Explorer' 
-                        ? 'bg-gray-900 text-white rounded-3xl p-8 text-center flex flex-col h-full ring-2 ring-gray-900 shadow-2xl' 
-                        : 'bg-white border border-gray-200/80 rounded-3xl p-8 text-center flex flex-col h-full shadow-sm';
-                    
-                    const priceClass = plan.name === 'Explorer' 
-                        ? 'mt-2 text-5xl font-bold tracking-tight text-white' 
-                        : 'mt-2 text-5xl font-bold tracking-tight';
-
-                    const featuresClass = plan.name === 'Explorer' 
-                        ? 'mt-8 space-y-4 text-gray-300 text-left flex-grow'
-                        : 'mt-8 space-y-4 text-gray-600 text-left flex-grow';
-
-                    const featureSvgClass = plan.name === 'Explorer'
-                        ? 'w-5 h-5 text-green-400 mr-2'
-                        : 'w-5 h-5 text-green-500 mr-2';
-
-
-                    const buttonHtml = plan.name === 'Explorer'
-                    ? `<button class="mt-8 bg-white text-gray-900 font-semibold py-3 px-8 rounded-full hover:bg-gray-200 transition-all duration-300 open-contact-modal">${buttonText}</button>`
-                    : `<button class="mt-8 bg-gray-900 text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-700 transition-all duration-300 open-contact-modal">${buttonText}</button>`;
-                    
-
-                    plansHtml += `
-                        <div class="plan-card p-4">
-                            <div class="${cardInnerClass}">
-                                <h3 class="text-xl font-semibold">${plan.name}</h3>
-                                <p class="${priceClass}">${plan.price}</p>
-                                <ul class="${featuresClass}">
-                                    ${plan.features.map(feature => `<li class="flex items-center"><svg class="${featureSvgClass}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>${feature}</li>`).join('')}
-                                </ul>
-                                ${buttonHtml}
-                            </div>
-                        </div>
-                    `;
+            // Parallax Effect for Hero Background
+            const parallaxBg = document.getElementById('parallax-bg');
+            if (parallaxBg) {
+                window.addEventListener('scroll', () => {
+                    const scrollY = window.scrollY;
+                    // Adjust the multiplier for more or less parallax effect
+                    parallaxBg.style.transform = `translateY(${scrollY * 0.3}px)`;
                 });
-
-                plansHtml += `
-                                </div>
-                            </div>
-                            <button id="prev-plan" class="absolute top-1/2 -translate-y-1/2 left-2 md:-left-10 bg-white/50 backdrop-blur-sm rounded-full p-2 shadow-md hover:bg-white transition disabled:opacity-50 disabled:cursor-not-allowed">
-                                <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-                            </button>
-                            <button id="next-plan" class="absolute top-1/2 -translate-y-1/2 right-2 md:-right-10 bg-white/50 backdrop-blur-sm rounded-full p-2 shadow-md hover:bg-white transition disabled:opacity-50 disabled:cursor-not-allowed">
-                                <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                            </button>
-                        </div>
-                    </section>
-                `;
-                plansSectionContainer.innerHTML = plansHtml;
             }
 
-            // Fetch Travel Plans from JSON
-            fetch('travel_plans.json') 
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok ' + response.statusText);
-                    }
-                    return response.json(); // Parse as JSON
-                })
-                .then(plans => {
-                    renderPlans(plans); // Render the plans
-                    initializePlansCarousel(); // Initialize carousel AFTER the content is loaded
-                    attachContactModalListeners(); // Re-attach modal listeners
-                })
-                .catch(error => console.error('Error loading travel plans:', error));
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
 
-
-            // Travel Plans Slider Logic - NOW IN A FUNCTION
-            function initializePlansCarousel() {
-                const slider = document.getElementById('plans-slider');
-                const prevButton = document.getElementById('prev-plan');
-                const nextButton = document.getElementById('next-plan');
-                // Ensure slider and buttons exist before proceeding
-                if (!slider || !prevButton || !nextButton) {
-                    console.warn("Carousel elements not found. Skipping carousel initialization.");
-                    return;
-                }
-
-                const cards = slider.querySelectorAll('.plan-card');
-                let currentIndex = 0;
-                let cardsToShow = window.innerWidth < 768 ? 1 : (window.innerWidth < 1024 ? 2 : 3);
-
-                function updateSlider() {
-                    cardsToShow = window.innerWidth < 768 ? 1 : (window.innerWidth < 1024 ? 2 : 3);
-                    // Check if a card exists before getting its offsetWidth
-                    if (cards.length > 0) {
-                        const cardWidth = cards[0].offsetWidth;
-                        slider.style.transform = `translateX(${-currentIndex * cardWidth}px)`;
-                    }
-                    
-                    prevButton.disabled = currentIndex === 0;
-                    nextButton.disabled = currentIndex >= cards.length - cardsToShow;
-                }
-                
-                nextButton.addEventListener('click', () => { 
-                    if (currentIndex < cards.length - cardsToShow) { 
-                        currentIndex++; 
-                        updateSlider(); 
-                    } 
-                });
-                prevButton.addEventListener('click', () => { 
-                    if (currentIndex > 0) { 
-                        currentIndex--; 
-                        updateSlider(); 
-                    } 
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden'); // Toggles display for mobile
+                    mobileMenu.classList.toggle('max-h-0'); // For transition effect
+                    mobileMenu.classList.toggle('max-h-screen'); // For transition effect
                 });
 
-                // Re-calculate on window resize
-                window.addEventListener('resize', updateSlider);
-                // Initial update
-                updateSlider();
+                // Close mobile menu when a link is clicked
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        if (!mobileMenu.classList.contains('hidden')) { // Only close if currently open
+                            mobileMenu.classList.add('hidden');
+                            mobileMenu.classList.remove('max-h-screen');
+                            mobileMenu.classList.add('max-h-0');
+                        }
+                    });
+                });
             }
 
-            // Contact Modal Logic (moved to a function to be called after dynamic content load)
-            function attachContactModalListeners() {
-                const modal = document.getElementById('contact-modal');
-                const modalOverlay = modal.querySelector('.modal-overlay');
-                const modalContainer = modal.querySelector('.modal-container');
-                const openModalButtons = document.querySelectorAll('.open-contact-modal');
-                const closeModalButton = document.getElementById('close-modal');
+            // Travel Plans Slider (Carousel)
+            const plansSlider = document.querySelector('.plans-slider');
+            const prevPlanBtn = document.getElementById('prev-plan');
+            const nextPlanBtn = document.getElementById('next-plan');
+            let currentIndex = 0;
 
-                const openModal = () => {
-                    modal.classList.remove('pointer-events-none');
-                    modal.classList.add('opacity-100');
-                    modalContainer.classList.add('scale-100', 'opacity-100');
-                    modalContainer.classList.remove('scale-95', 'opacity-0');
-                };
+            const updateSlider = () => {
+                if (plansSlider) {
+                    const cardWidth = plansSlider.children[0].offsetWidth; // Get width of a single card
+                    const gap = 32; // Assuming default gap-8 in Tailwind (8 * 4px = 32px)
+                    const offset = (cardWidth + gap) * currentIndex;
+                    plansSlider.style.transform = `translateX(-${offset}px)`;
+                }
+            };
 
-                const closeModal = () => {
-                    modalContainer.classList.remove('scale-100', 'opacity-100');
-                    modalContainer.classList.add('scale-95', 'opacity-0');
-                    modal.classList.remove('opacity-100');
-                    modal.classList.add('pointer-events-none');
-                };
+            if (nextPlanBtn) {
+                nextPlanBtn.addEventListener('click', () => {
+                    const totalCards = plansSlider.children.length;
+                    // For mobile, 1 card visible; for desktop, 3 cards might be visible
+                    // This logic assumes a single card scroll for simplicity.
+                    // For more complex responsive sliding, calculate visible cards based on media queries.
+                    const cardsInView = window.innerWidth >= 1024 ? 3 : (window.innerWidth >= 768 ? 2 : 1);
+                    if (currentIndex < totalCards - cardsInView) {
+                        currentIndex++;
+                    } else {
+                        currentIndex = 0; // Loop back to start
+                    }
+                    updateSlider();
+                });
+            }
 
-                openModalButtons.forEach(button => button.addEventListener('click', (e) => {
+            if (prevPlanBtn) {
+                prevPlanBtn.addEventListener('click', () => {
+                    const totalCards = plansSlider.children.length;
+                    const cardsInView = window.innerWidth >= 1024 ? 3 : (window.innerWidth >= 768 ? 2 : 1);
+                    if (currentIndex > 0) {
+                        currentIndex--;
+                    } else {
+                        currentIndex = totalCards - cardsInView; // Loop to end
+                    }
+                    updateSlider();
+                });
+            }
+
+            window.addEventListener('resize', updateSlider);
+            updateSlider();
+
+            // Contact Modal Logic
+            const contactModal = document.getElementById('contact-modal');
+            const openContactModalButtons = document.querySelectorAll('.open-contact-modal');
+            const closeContactModalButton = contactModal ? contactModal.querySelector('#close-modal') : null;
+            const contactModalContainer = contactModal ? contactModal.querySelector('.modal-container') : null;
+
+            const openModal = (modalElement, containerElement) => {
+                modalElement.classList.remove('pointer-events-none');
+                modalElement.classList.add('opacity-100');
+                containerElement.classList.add('scale-100', 'opacity-100');
+                containerElement.classList.remove('scale-95', 'opacity-0');
+            };
+
+            const closeModal = (modalElement, containerElement) => {
+                containerElement.classList.remove('scale-100', 'opacity-100');
+                containerElement.classList.add('scale-95', 'opacity-0');
+                modalElement.classList.remove('opacity-100');
+                modalElement.classList.add('pointer-events-none');
+            };
+
+            if (contactModal && contactModalContainer) { // Ensure elements exist before adding listeners
+                openContactModalButtons.forEach(button => button.addEventListener('click', (e) => {
                     e.preventDefault();
-                    openModal();
+                    openModal(contactModal, contactModalContainer);
                 }));
-                closeModalButton.addEventListener('click', closeModal);
-                modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+                if (closeContactModalButton) {
+                    closeContactModalButton.addEventListener('click', () => closeModal(contactModal, contactModalContainer));
+                }
+                contactModal.addEventListener('click', (e) => { 
+                    if (e.target === contactModal) closeModal(contactModal, contactModalContainer); 
+                });
             }
 
-            // Initial call to attach listeners for existing elements (like header contact button)
-            attachContactModalListeners();
+            // Policy Modals (Terms, Privacy, Cancellation, Refund)
+            const policyModal = document.getElementById('policy-modal');
+            const policyModalTitle = document.getElementById('policy-modal-title');
+            const policyModalContent = document.getElementById('policy-modal-content');
+            const closePolicyModalButton = policyModal ? policyModal.querySelector('#close-policy-modal') : null;
+            const policyModalContainer = policyModal ? policyModal.querySelector('.modal-container') : null;
+            const openPolicyModalButtons = document.querySelectorAll('.open-policy-modal');
+
+            const policies = {
+                terms: {
+                    title: "Terms and Conditions",
+                    content: `
+                        <h4 class="text-xl font-semibold mb-3 text-gray-800">Welcome to IndoTravo!</h4>
+                        <p class="mb-4">We welcome the visitors to our website “INDOTRAVO.COM”. This website was developed with the purpose of making available to you to find out and browse the information, services and brands owned by INDOTRAVO, your travel partner.</p>
+                        <p class="mb-4">If you continue to browse and use this website you are agreeing to comply with the following terms and condition of our website.</p>
+                        <p class="mb-4">There is no agreement between us and the visitors to our website under which we provide any guarantee or warranty of any kind for the accuracy, timeliness, performance, completeness or suitability of the information, brand or services found or offered on this website for any particular purpose. We are not under any liability under the law if the site has materials which may contain inaccuracies or errors. The usage of information available on this website is entirely at your own risk and should be used for your own personal, non-commercial use only and non-compliance will be considered as an offence and leads to damage/claim.</p>
+                        <p class="mb-4">The foremost purpose of using this website is to find out and obtaining information on the products and services offered by our Company. You get access to our services and brands that are available on our website, choose products and brand, select your preference, contact with us, submit your views and comments on our Group and our products and services. The content of this website is owned by or licensed to us including the copyrights. This website may also contain links to other websites which are only with the purpose to provide more information to you. You may not link this website to another website without the owner’s prior written consent. The breach of this condition may result into legal dispute and further lead to claims and damages based on the extent of the offence.</p>
+                        <p class="mb-4">Prices displayed for the products and services on INDOTRAVO.COM are subject to change without prior information or notice. The price are valid for minimum 02 adults travelling together.</p>
+                        <p class="mb-4">In the case of bad weather conditions, we try our best to find similar activities/transfers.</p>
+                        <p class="mb-4">Any cost or cancellation charge because of any unforeseen conditions is not included.</p>
+                        <p class="mb-4">Travelers are requested to take care of their belongings.</p>
+                        <p>Note that the paid amount is only refundable according to the cancellation policy as mentioned below.</p>
+                    `
+                },
+                privacy: {
+                    title: "Privacy Policy",
+                    content: `
+                        <h4 class="text-xl font-semibold mb-3 text-gray-800">Your Privacy Matters to Us</h4>
+                        <p class="mb-4">When you purchase something from our website, as part of the buying process, we collect the personal information you give us such as your name, address and email address. With your permission, we may send you emails about our store, new products and other updates.</p>
+                        <p class="mb-4">We may disclose your personal information if we are required by law to do so or if you violate our Terms of Service.</p>
+                        <p class="mb-4">To protect your personal information, we take reasonable precautions and follow industry best practices to make sure it is not inappropriately lost, misused, accessed, disclosed, altered or destroyed.</p>
+                        <p class="mb-4">When you click on links on our store, they may direct you away from our site. We are not responsible for the privacy practices of other sites and encourage you to read their privacy statements.</p>
+                        <p class="mb-4">We reserve the right to modify this privacy policy at any time, so please review it frequently. Changes and clarifications will take effect immediately upon their posting on the website. If we make material changes to this policy, we will notify you here that it has been updated, so that you are aware of what information we collect, how we use it, and under what circumstances, if any, we use and/or disclose it. If our store is acquired or merged with another company, your information may be transferred to the new owners so that we may continue to sell products to you.</p>
+                        <p>If you would like to: access, correct, amend or delete any personal information we have about you, simply contact us at <strong>info@indotravo.com</strong></p>
+                    `
+                },
+                cancellation: {
+                    title: "Cancellation Policy",
+                    content: `
+                        <h4 class="text-xl font-semibold mb-3 text-gray-800">Understanding Our Cancellation Process</h4>
+                        <p class="mb-4">Cancellation process will be taken into consideration if the cancellation request is made within 72 hours of placing an order.</p>
+                        <p class="mb-4">There is no cancellation of orders which is commencing on the same day of placing an order.</p>
+                        <p class="mb-4">Cancellation of orders will not be considered for those which have been booked under the category of limited special offers.</p>
+                        <p class="mb-4">You can always bring it to our notice within 24 hours of receiving the product that if you feel the offer received is not the same as shown on the site or as per your expectations. Our Customer Service Team will immediately look into the complaint and will take appropriate action.</p>
+                        <p class="mb-4">Some bookings may be non-refundable as per the specific airline’s policy.</p>
+                        <p>Please note that convenience fee charged at the time of booking is non-refundable.</p>
+                    `
+                },
+                refund: {
+                    title: "Refund Policy",
+                    content: `
+                        <h4 class="text-xl font-semibold mb-3 text-gray-800">Our Hassle-Free Refund Facility</h4>
+                        <p class="mb-4">You enjoy a reliable and hassle-free refund facility with INDOTRAVO. In case, for any reason, you are not pleased with the order placed by you, you are always free to apply for a refund. To request a refund, you can contact us with your order details within three days of your purchase. Your refund request reason is optional; however you are always welcome to share your feedback as we feel that customer feedback is precious and will take very seriously and use it to constantly improve our offers and quality of services. Refunds will be processed within 21 days period.</p>
+                        <p class="mb-4">Refund for hotel payment will follow the hotel’s cancellation policy.</p>
+                        <p class="mb-4">Flight tickets cancellations will follow the airlines policy.</p>
+                        <p class="mb-4">Please note that convenience fee charged at the time of booking will not be refundable.</p>
+                        <p>To ensure the best experience possible, we are there with you always.</p>
+                    `
+                }
+            };
+
+            if (policyModal && policyModalContainer) {
+                openPolicyModalButtons.forEach(button => {
+                    button.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const policyType = button.dataset.policyType; // Get the policy type from data-policy-type
+                        const policy = policies[policyType];
+
+                        if (policy) {
+                            policyModalTitle.textContent = policy.title;
+                            policyModalContent.innerHTML = policy.content; // Use innerHTML to render formatted text
+                            openModal(policyModal, policyModalContainer);
+                        }
+                    });
+                });
+
+                if (closePolicyModalButton) {
+                    closePolicyModalButton.addEventListener('click', () => closeModal(policyModal, policyModalContainer));
+                }
+                policyModal.addEventListener('click', (e) => { 
+                    if (e.target === policyModal) closeModal(policyModal, policyModalContainer); 
+                });
+            }
+
         });
     </script>
 </body>
