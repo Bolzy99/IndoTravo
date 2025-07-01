@@ -47,5 +47,15 @@
       "Travel",
       "Flight tickets"
     ]
+  },
+  {
+    "name": "Trip to Zurich Switzerland",
+    "price": "₹100,000",
+    "features": [
+      "Airfare",
+      "Hotel stays",
+      "Visit to Alps",
+      "5N3D"
+    ]
   }
 ]
