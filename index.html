@@ -137,8 +137,12 @@
 
     <header class="w-full py-4 px-4 sm:px-6 lg:px-8 bg-[#FDFCF8]/80 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200/50">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="#"><img src="images/logo.jpg" alt="IndoTravo Logo" class="h-10 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/150x40/000000/ffffff?text=IndoTravo';"></a>
+            <a href="index.html"><img src="images/logo.jpg" alt="IndoTravo Logo" class="h-10 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/150x40/000000/ffffff?text=IndoTravo';"></a>
             <nav class="hidden md:flex items-center space-x-8">
+                <!-- ADDED LINKS -->
+                <a href="what-we-do.html" class="text-gray-600 hover:text-gray-900 transition-colors">What We Do</a>
+                <a href="why-choose-us.html" class="text-gray-600 hover:text-gray-900 transition-colors">Why Choose Us</a>
+                <!-- EXISTING LINKS -->
                 <a href="#about" class="text-gray-600 hover:text-gray-900 transition-colors">About Us</a>
                 <a href="#destinations" class="text-gray-600 hover:text-gray-900 transition-colors">Destinations</a>
                 <a href="#plans-section-container" class="text-gray-600 hover:text-gray-900 transition-colors">Plans</a>
@@ -157,6 +161,10 @@
         <button id="close-mobile-menu" class="absolute top-4 right-4 text-gray-800">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
+        <!-- ADDED LINKS -->
+        <a href="what-we-do.html" class="text-gray-800 text-2xl font-semibold hover:text-gray-900 transition-colors" onclick="closeMobileMenu()">What We Do</a>
+        <a href="why-choose-us.html" class="text-gray-800 text-2xl font-semibold hover:text-gray-900 transition-colors" onclick="closeMobileMenu()">Why Choose Us</a>
+        <!-- EXISTING LINKS -->
         <a href="#about" class="text-gray-800 text-2xl font-semibold hover:text-gray-900 transition-colors" onclick="closeMobileMenu()">About Us</a>
         <a href="#destinations" class="text-gray-800 text-2xl font-semibold hover:text-gray-900 transition-colors" onclick="closeMobileMenu()">Destinations</a>
         <a href="#plans-section-container" class="text-gray-800 text-2xl font-semibold hover:text-gray-900 transition-colors" onclick="closeMobileMenu()">Plans</a>
@@ -388,7 +396,7 @@
             </div>
             <div class="mt-12 text-center" data-aos="fade-up" data-aos-delay="500">
                 <a href="https://g.page/IndoTravo/review?rc" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-gray-900 text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-700 transition-all duration-300 shadow-lg">
-                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.868 2.884c.48.067.86.447.927.927l.15 1.054a.75.75 0 001.214.475l.93-.93a.75.75 0 011.06 0l1.414 1.414a.75.75 0 010 1.06l-.93.93a.75.75 0 00.475 1.214l1.054.15c.48.067.86.447.927.927l.15 1.054a.75.75 0 00.475 1.214l.93-.93a.75.75 0 011.06 0l1.414 1.414a.75.75 0 010 1.06l-.93.93a.75.75 0 00.475 1.214l1.054.15c.48.067.86.447.927.927L22 17.116V10a2 2 0 00-2-2h-.884l-.15-1.054a2 2 0 00-2-2h-1.054a2 2 0 00-1.214-.475l-.93-.93a2 2 0 00-2-2h-1.054a2 2 0 00-1.214-.475l-.93-.93a2 2 0 00-2-2H2v.884l.15 1.054c.067.48.447.86.927.927l1.054.15c.48.067.86.447.927.927l.15 1.054a.75.75 0 00.475 1.214l-.93.93a.75.75 0 010 1.06l1.414 1.414a.75.75 0 010 1.06l-.93.93a.75.75 0 00-.475-1.214l-1.054-.15a.75.75 0 00-.927-.927l-.15-1.054a.75.75 0 00-.475-1.214l.93-.93a.75.75 0 010-1.06L4.058 9.942a.75.75 0 010-1.06l.93-.93a.75.75 0 00-.475-1.214L3.454 6.549a.75.75 0 00-.927-.927L2 5V2z" clip-rule="evenodd" /></svg>
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10.868 2.884c.48.067.86.447.927.927l.15 1.054a.75.75 0 001.214.475l.93-.93a.75.75 0 011.06 0l1.414 1.414a.75.75 0 010 1.06l-.93.93a.75.75 0 00.475 1.214l1.054.15c.48.067.86.447.927.927L22 17.116V10a2 2 0 00-2-2h-.884l-.15-1.054a2 2 0 00-2-2h-1.054a2 2 0 00-1.214-.475l-.93-.93a2 2 0 00-2-2h-1.054a2 2 0 00-1.214-.475l-.93-.93a2 2 0 00-2-2H2v.884l.15 1.054c.067.48.447.86.927.927l1.054.15c.48.067.86.447.927.927l.15 1.054a.75.75 0 00.475 1.214l-.93.93a.75.75 0 010 1.06l1.414 1.414a.75.75 0 010 1.06l-.93.93a.75.75 0 00-.475-1.214l-1.054-.15a.75.75 0 00-.927-.927l-.15-1.054a.75.75 0 00-.475-1.214l.93-.93a.75.75 0 010-1.06L4.058 9.942a.75.75 0 010-1.06l.93-.93a.75.75 0 00-.475-1.214L3.454 6.549a.75.75 0 00-.927-.927L2 5V2z" clip-rule="evenodd" /></svg>
                     Write a Google Review
                 </a>
             </div>
@@ -409,14 +417,21 @@
     <footer id="contact-footer" class="bg-white/50 border-t border-gray-200/80">
         <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-5 gap-8">
-                <div class="col-span-2 md:col-span-1"><a href="#"><img src="images/logo.jpg" alt="IndoTravo Logo" class="h-10 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/150x40/000000/ffffff?text=IndoTravo';"></a></div>
+                <div class="col-span-2 md:col-span-1"><a href="index.html"><img src="images/logo.jpg" alt="IndoTravo Logo" class="h-10 w-auto" onerror="this.onerror=null;this.src='https://placehold.co/150x40/000000/ffffff?text=IndoTravo';"></a></div>
+                <div><h3 class="text-sm font-semibold text-gray-500 tracking-wider uppercase">Explore</h3><ul class="mt-4 space-y-2">
+                    <!-- ADDED LINKS -->
+                    <li><a href="what-we-do.html" class="text-base text-gray-600 hover:text-gray-900">What We Do</a></li>
+                    <li><a href="why-choose-us.html" class="text-base text-gray-600 hover:text-gray-900">Why Choose Us</a></li>
+                    <!-- EXISTING LINKS -->
+                    <li><a href="#destinations" class="text-base text-gray-600 hover:text-gray-900">Destinations</a></li>
+                </ul></div>
                 <div><h3 class="text-sm font-semibold text-gray-500 tracking-wider uppercase">Company</h3><ul class="mt-4 space-y-2"><li><a href="#about" class="text-base text-gray-600 hover:text-gray-900">About</a></li><li><a href="#" class="text-base text-gray-600 hover:text-gray-900">Careers</a></li><li><a href="#" class="text-base text-gray-600 hover:text-gray-900">Reviews</a></li></ul></div>
-                <div><h3 class="text-sm font-semibold text-gray-500 tracking-wider uppercase">Destinations</h3><ul class="mt-4 space-y-2"><li><a href="#" class="text-base text-gray-600 hover:text-gray-900">Paris</a></li><li><a href="#" class="text-base text-gray-600 hover:text-gray-900">Bali</a></li><li><a href="#" class="text-base text-gray-600 hover:text-gray-900">Tokyo</a></li></ul></div>
                 <div><h3 class="text-sm font-semibold text-gray-500 tracking-wider uppercase">Legal</h3><ul class="mt-4 space-y-2">
-                    <li><a href="#" class="text-base text-gray-600 hover:text-gray-900" data-policy="terms">Terms & Conditions</a></li>
-                    <li><a href="#" class="text-base text-gray-600 hover:text-gray-900" data-policy="privacy">Privacy Policy</a></li>
-                    <li><a href="#" class="text-base text-gray-600 hover:text-gray-900" data-policy="cancellation">Cancellation Policy</a></li>
-                    <li><a href="#" class="text-base text-gray-600 hover:text-gray-900" data-policy="refund">Refund Policy</a></li>
+                    <!-- UPDATED LINKS -->
+                    <li><a href="terms.html" class="text-base text-gray-600 hover:text-gray-900">Terms & Conditions</a></li>
+                    <li><a href="privacy.html" class="text-base text-gray-600 hover:text-gray-900">Privacy Policy</a></li>
+                    <li><a href="cancellation.html" class="text-base text-gray-600 hover:text-gray-900">Cancellation Policy</a></li>
+                    <li><a href="refund.html" class="text-base text-gray-600 hover:text-gray-900">Refund Policy</a></li>
                 </ul></div>
                 <div>
                     <h3 class="text-sm font-semibold text-gray-500 tracking-wider uppercase">Contact</h3>
@@ -468,17 +483,6 @@
             </div>
         </div>
     </div>
-
-    <div id="policy-modal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 z-[60] flex items-center justify-center p-4 opacity-0 pointer-events-none">
-        <div class="modal-container bg-white rounded-2xl shadow-xl w-full max-w-2xl p-8 text-left transform scale-95 opacity-0">
-            <button id="close-policy-modal" class="absolute top-4 right-4 text-gray-400 hover:text-gray-800 transition-colors">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
-            <h2 id="policy-modal-title" class="text-3xl font-bold mb-6 text-gray-900"></h2>
-            <div id="policy-modal-content" class="text-gray-700 leading-relaxed max-h-[70vh] overflow-y-auto pr-4">
-                </div>
-        </div>
-    </div>
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -518,16 +522,12 @@
 
                     if (plan.name === 'Explorer') {
                         buttonText = 'Choose Plan';
-                        buttonClass = 'bg-gray-900 text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-700 transition-all duration-300 open-contact-modal'; // You might want a different style here
                     } else if (plan.name === 'Luxury') {
                         buttonText = 'Contact Us';
-                        buttonClass = 'bg-gray-900 text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-700 transition-all duration-300 open-contact-modal'; // You might want a different style here
                     } else if (plan.name === 'Adventure') {
                         buttonText = 'Book Adventure';
-                        buttonClass = 'bg-gray-900 text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-700 transition-all duration-300 open-contact-modal'; // You might want a different style here
                     } else if (plan.name === 'Family Fun') {
                         buttonText = 'Plan Family Trip';
-                        buttonClass = 'bg-gray-900 text-white font-semibold py-3 px-8 rounded-full hover:bg-gray-700 transition-all duration-300 open-contact-modal'; // You might want a different style here
                     }
 
 
@@ -697,123 +697,6 @@
             // Close mobile menu when a navigation link is clicked
             mobileMenu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', closeMobileMenu);
-            });
-
-
-            // Policy Modal Logic
-            const policyModal = document.getElementById('policy-modal');
-            const closePolicyModalButton = document.getElementById('close-policy-modal');
-            const policyModalTitle = document.getElementById('policy-modal-title');
-            const policyModalContent = document.getElementById('policy-modal-content');
-            const policyLinks = document.querySelectorAll('a[data-policy]');
-
-            const policies = {
-                terms: {
-                    title: "Terms & Conditions",
-                    content: `
-                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Welcome to INDOTRAVO.COM</h3>
-                        <p class="mb-4">We welcome the visitors to our website “INDOTRAVO.COM”. This website was developed with the purpose of making available to you to find out and browse the information, services and brands owned by INDOTRAVO your travel partner.</p>
-                        <p class="mb-4">If you continue to browse and use this website you are agreeing to comply with the following terms and condition of our website.</p>
-                        
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Usage of Information</h3>
-                        <p class="mb-4">There is no agreement between us and the visitors to our website under which we provide any guarantee or warranty of any kind for the accuracy, timeliness, performance, completeness or suitability of the information, brand or services found or offered on this website for any particular purpose. We are not under any liability under the law if the site has materials which may contain inaccuracies or errors. The usage of information available on this website is entirely at your own risk and should be used for your own personal, non-commercial use only and non-compliance will be considered as an offence and leads to damage/claim.</p>
-                        <p class="mb-4">The foremost purpose of using this website is to find out and obtaining information on the products and services offered by our Company. You get access to our services and brands that are available on our website, choose products and brand, select your preference, contact with us, submit your views and comments on our Group and our products and services.</p>
-                        
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Intellectual Property</h3>
-                        <p class="mb-4">The content of this website is owned by or licensed to us including the copyrights. This website may also contain links to other websites which are only with the purpose to provide more information to you. You may not link this website to another website without the owner’s prior written consent. The breach of this condition may result into legal dispute and further lead to claims and damages based on the extent of the offence.</p>
-                        
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Pricing and Conditions</h3>
-                        <p class="mb-4">Prices displayed for the products and services on INDOTRAVO.COM are subject to change without prior information or notice. The price are valid for minimum 02 adults travelling together.</p>
-                        <p class="mb-4">In the case of bad weather conditions, we try our best to find similar activities/transfers.</p>
-                        <p class="mb-4">Any cost or cancellation charge because of any unforeseen conditions is not included.</p>
-                        <p class="mb-4">Travelers are requested to take care of their belongings.</p>
-                        <p class="mb-4">Note that the paid amount is only refundable according to the cancellation policy as mentioned below.</p>
-                    `
-                },
-                privacy: {
-                    title: "Privacy Policy",
-                    content: `
-                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Information Collection and Use</h3>
-                        <p class="mb-4">When you purchase something from our website, as part of the buying process, we collect the personal information you give us such as your name, address and email address. With your permission, we may send you emails about our store, new products and other updates.</p>
-                        <p class="mb-4">We may disclose your personal information if we are required by law to do so or if you violate our Terms of Service.</p>
-                        
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Data Security</h3>
-                        <p class="mb-4">To protect your personal information, we take reasonable precautions and follow industry best practices to make sure it is not inappropriately lost, misused, accessed, disclosed, altered or destroyed.</p>
-                        
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Third-Party Links</h3>
-                        <p class="mb-4">When you click on links on our store, they may direct you away from our site. We are not responsible for the privacy practices of other sites and encourage you to read their privacy statements.</p>
-                        
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Policy Changes</h3>
-                        <p class="mb-4">We reserve the right to modify this privacy policy at any time, so please review it frequently. Changes and clarifications will take effect immediately upon their posting on the website. If we make material changes to this policy, we will notify you here that it has been updated, so that you are aware of what information we collect, how we use it, and under what circumstances, if any, we use and/or disclose it. If our store is acquired or merged with another company, your information may be transferred to the new owners so that we may continue to sell products to you.</p>
-                        
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Contact Us</h3>
-                        <p class="mb-4">If you would like to: access, correct, amend or delete any personal information we have about you, simply contact us at <strong>info@indotravo.com</strong></p>
-                    `
-                },
-                cancellation: {
-                    title: "Cancellation Policy",
-                    content: `
-                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Cancellation Terms</h3>
-                        <ul class="list-disc pl-5 space-y-2 mb-4">
-                            <li>Cancellation process will be taken into consideration if the cancellation request is made within 72 hours of placing an order.</li>
-                            <li>There is no cancellation of orders which is commencing on the same day of placing an order.</li>
-                            <li>Cancellation of orders will not be considered for those which have been booked under the category of limited special offers.</li>
-                            <li>You can always bring it to our notice within 24 hours of receiving the product that if you feel the offer received is not the same as shown on the site or as per your expectations. Our Customer Service Team will immediately look into the complaint and will take appropriate action.</li>
-                            <li>Some bookings may be non-refundable as per the specific airline’s policy.</li>
-                            <li>Please note that convenience fee charged at the time of booking is non-refundable.</li>
-                        </ul>
-                    `
-                },
-                refund: {
-                    title: "Refund Policy",
-                    content: `
-                        <h3 class="text-2xl font-bold mb-4 text-gray-900">Refund Facility</h3>
-                        <p class="mb-4">You enjoy a reliable and hassle-free refund facility with INDOTRAVO. In case, for any reason, you are not pleased with the order placed by you, you are always free to apply for a refund. To request a refund, you can contact us with your order details within three days of your purchase.</p>
-                        <p class="mb-4">Your refund request reason is optional; however you are always welcome to share your feedback as we feel that customer feedback is precious and will take very seriously and use it to constantly improve our offers and quality of services. Refunds will be processed within 21 days period.</p>
-                        
-                        <h3 class="text-xl font-bold mb-3 text-gray-800">Specific Conditions</h3>
-                        <ul class="list-disc pl-5 space-y-2 mb-4">
-                            <li>Refund for hotel payment will follow the hotel’s cancellation policy.</li>
-                            <li>Flight tickets cancellations will follow the airlines policy.</li>
-                            <li>Please note that convenience fee charged at the time of booking will not be refundable.</li>
-                        </ul>
-                        <p class="mb-4">To ensure the best experience possible, we are there with you always.</p>
-                    `
-                }
-            };
-
-            function openPolicyModal(policyType) {
-                const policy = policies[policyType];
-                if (policy) {
-                    policyModalTitle.textContent = policy.title;
-                    policyModalContent.innerHTML = policy.content;
-                    policyModal.classList.remove('pointer-events-none');
-                    policyModal.classList.add('opacity-100');
-                    policyModal.querySelector('.modal-container').classList.add('scale-100', 'opacity-100');
-                    policyModal.querySelector('.modal-container').classList.remove('scale-95', 'opacity-0');
-                }
-            }
-
-            function closePolicyModal() {
-                policyModal.querySelector('.modal-container').classList.remove('scale-100', 'opacity-100');
-                policyModal.querySelector('.modal-container').classList.add('scale-95', 'opacity-0');
-                policyModal.classList.remove('opacity-100');
-                policyModal.classList.add('pointer-events-none');
-            }
-
-            policyLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const policyType = e.target.dataset.policy;
-                    openPolicyModal(policyType);
-                });
-            });
-
-            if (closePolicyModalButton) {
-                closePolicyModalButton.addEventListener('click', closePolicyModal);
-            }
-            policyModal.addEventListener('click', (e) => {
-                if (e.target === policyModal) closePolicyModal();
             });
 
 
